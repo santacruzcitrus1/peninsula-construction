@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Peninsula Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --black: #0a0a0a; --gold: #C9A84C; --gold-light: #E8C96A; --white: #FDF6E9; --gray-light: #FDF6E9; --gray-mid: #e0e0e0; --text-dark: #1a1a1a; --text-mid: #444; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); }
+    .top-bar { background: var(--black); color: var(--gray-mid); text-align: center; padding: 8px 20px; font-size: 13px; }
+    .top-bar a { color: var(--gold); text-decoration: none; }
+    nav { background: #FDF6E9; box-shadow: 0 2px 12px rgba(0,0,0,0.10); position: sticky; top: 0; z-index: 1000; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 80px; }
+    .nav-logo img { height: 60px; width: auto; }
+    .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 10px 20px !important; border-radius: 4px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .section-black { background: var(--black); color: #fff; }
+    .section-white { background: #FDF6E9; }
+    .section-gray { background: var(--gray-light); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 80px 0; }
+    .section-pad-sm { padding: 50px 0; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-label-dark { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 12px; }
+    h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.15; }
+    h3 { font-size: 22px; font-weight: 700; }
+    p { line-height: 1.7; font-size: 15px; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--black); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline-white { display: inline-block; border: 2px solid #fff; color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 30px; border-radius: 4px; text-decoration: none; }
+    .btn-outline-white:hover { background: #FDF6E9; color: var(--black); }
+    .chevron-up-white { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--white); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .chevron-up-black { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--black); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .chevron-up-gray { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--gray-light); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .page-hero { background: var(--black); padding: 80px 0 100px; text-align: center; }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: #fff; letter-spacing: -1px; }
+    .page-hero .gold { color: var(--gold); }
+    .page-hero p { color: #aaa; font-size: 17px; margin-top: 16px; }
+    .breadcrumb { font-size: 12px; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    input, textarea, select { width: 100%; padding: 14px 16px; border: 1px solid var(--gray-mid); border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--text-dark); background: #FDF6E9; transition: border-color 0.2s; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); }
+    label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 6px; }
+    footer { background: var(--black); color: #aaa; padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .footer-logo img { height: 55px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+    .footer-logo p { font-size: 14px; line-height: 1.6; color: #888; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { color: #888; text-decoration: none; font-size: 14px; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-col p { font-size: 14px; color: #888; line-height: 1.7; }
+    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding: 20px 24px 0; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #555; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+  <div class="top-bar"><a href="tel:8313196492">📞 (831) 319-6492</a> &nbsp;|&nbsp; CSLB #723364 &nbsp;|&nbsp; Serving Santa Cruz, Monterey & South Bay</div>
+  <nav><div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="logo.png" alt="Peninsula Construction"></a>
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="services.html" >Services</a></li>
+      <li><a href="process.html" >Our Process</a></li>
+      <li><a href="our-work.html" >Our Work</a></li>
+      <li><a href="about.html" >About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+  </div></nav>
+
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> → Contact</div>
+      <h1>Get a <span class="gold">Free Quote</span></h1>
+      <p>Richard responds to texts and calls same day. Fill out the form below and we'll be in touch.</p>
+    </div>
+  </section>
+  <div style="background:var(--gray-light);"><div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#0a0a0a"/></svg></div></div>
+
+  <section class="section-gray section-pad">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;">
+
+        <!-- CONTACT INFO -->
+        <div>
+          <div class="section-label-dark">REACH RICHARD DIRECTLY</div>
+          <h2 style="margin-bottom:24px;">Let's Talk About Your Project</h2>
+          <p style="color:var(--text-mid);margin-bottom:40px;">Richard prefers a text or call. He personally handles every new client conversation — no receptionist, no sales team. Just Richard.</p>
+
+          <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:40px;">
+            <div style="display:flex;gap:16px;align-items:center;">
+              <div style="width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📞</div>
+              <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px;">Phone / Text</div>
+                <a href="tel:8313196492" style="font-size:20px;font-weight:700;color:var(--text-dark);text-decoration:none;">(831) 319-6492</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center;">
+              <div style="width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">✉️</div>
+              <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px;">Email</div>
+                <a href="mailto:richrod@peninsula.construction" style="font-size:16px;font-weight:600;color:var(--text-dark);text-decoration:none;">richrod@peninsula.construction</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center;">
+              <div style="width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📍</div>
+              <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px;">Location</div>
+                <div style="font-size:15px;font-weight:600;color:var(--text-dark);">1185 San Andreas Rd<br>Watsonville, CA 95076</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center;">
+              <div style="width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📋</div>
+              <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px;">License</div>
+                <div style="font-size:15px;font-weight:600;color:var(--text-dark);">CSLB #723364 — B General Building<br>Licensed Since 1996</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICE AREA -->
+          <div style="background:#fff;padding:24px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+            <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin-bottom:12px;">Service Area</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Watsonville</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Santa Cruz</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Monterey</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Capitola</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Seaside</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Marina</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Pacific Grove</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Gilroy</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Morgan Hill</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">Hollister</span>
+              <span style="background:var(--gray-light);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;">San Jose</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div style="background:#fff;padding:40px;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.10);">
+          <h3 style="margin-bottom:8px;">Request a Free Quote</h3>
+          <p style="color:var(--text-mid);font-size:14px;margin-bottom:28px;">We'll respond within 24 hours — usually same day.</p>
+          <form action="https://formspree.io/f/RICHIE_FORM_ID" method="POST">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div>
+                <label>First Name</label>
+                <input type="text" name="first_name" placeholder="John" required>
+              </div>
+              <div>
+                <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Smith" required>
+              </div>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(831) 555-0000" required>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="john@email.com">
+            </div>
+            <div style="margin-bottom:16px;">
+              <label>Project Type</label>
+              <select name="project_type">
+                <option value="">Select a service...</option>
+                <option>ADU Construction</option>
+                <option>Garage Conversion</option>
+                <option>Room Addition</option>
+                <option>Kitchen Remodel</option>
+                <option>Bathroom Remodel</option>
+                <option>New Home Build</option>
+                <option>Development Project</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label>Property Address</label>
+              <input type="text" name="property_address" placeholder="123 Main St, Watsonville, CA">
+            </div>
+            <div style="margin-bottom:24px;">
+              <label>Tell Us About Your Project</label>
+              <textarea name="message" rows="4" placeholder="What are you looking to build? Any timeline or budget in mind?"></textarea>
+            </div>
+            <button type="submit" style="width:100%;background:var(--gold);color:var(--black);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:16px;border:none;border-radius:4px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background 0.2s;" onmouseover="this.style.background='#E8C96A'" onmouseout="this.style.background='#C9A84C'">
+              Send My Request →
+            </button>
+            <p style="font-size:12px;color:#aaa;text-align:center;margin-top:12px;">We respect your privacy. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Peninsula Construction">
+        <p>30+ years building dreams across Santa Cruz, Monterey & the South Bay. ADU specialists. Design | Build | Deliver.</p>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li><li><a href="our-work.html">Our Work</a></li>
+        <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="services.html">ADU Construction</a></li><li><a href="services.html">Garage Conversions</a></li>
+        <li><a href="services.html">Room Additions</a></li><li><a href="services.html">Kitchen Remodels</a></li>
+        <li><a href="services.html">Bathroom Remodels</a></li><li><a href="services.html">New Home Builds</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>
+        <a href="tel:8313196492" style="color:#C9A84C;">(831) 319-6492</a><br><br>
+        1185 San Andreas Rd<br>Watsonville, CA 95076<br><br>CSLB #723364<br>Licensed Since 1996
+      </p></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Peninsula Construction. All rights reserved.</span>
+      <span>Website by <a href="https://emberseo.ai" target="_blank">Ember SEO</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>

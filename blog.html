@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADU Blog & Resources | Peninsula Construction</title>
+  <meta name="description" content="ADU tips, guides, and construction insights from Peninsula Construction. Learn about ADU costs, permits, design, and how to maximize your property's value.">
+  <link rel="canonical" href="https://peninsulaconstruction.build/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #0a0a0a; --black2: #141414; --gold: #C9A84C; --gold-light: #E8C96A;
+      --white: #FDF6E9; --gray-light: #FDF6E9; --gray-mid: #e0e0e0; --text-dark: #1a1a1a; --text-mid: #444;
+    }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); }
+    .top-bar { background: var(--black); color: var(--gray-mid); text-align: center; padding: 8px 20px; font-size: 13px; letter-spacing: 0.5px; }
+    .top-bar a { color: var(--gold); text-decoration: none; }
+    nav { background: #FDF6E9; box-shadow: 0 2px 12px rgba(0,0,0,0.10); position: sticky; top: 0; z-index: 1000; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 80px; }
+    .nav-logo img { height: 60px; width: auto; }
+    .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 10px 20px !important; border-radius: 4px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-black { background: var(--black); color: #fff; }
+    .section-white { background: #FDF6E9; color: var(--text-dark); }
+    .section-pad { padding: 80px 0; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-label-dark { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 12px; }
+    h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; }
+    h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 800; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--black); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 50px; }
+    .blog-card { background: #FDF6E9; border: 1px solid #e0d9cc; border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
+    .blog-card-img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-card-body { padding: 28px; }
+    .blog-tag { display: inline-block; background: var(--gold); color: var(--black); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
+    .blog-card-body h3 { font-size: 17px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; color: var(--text-dark); }
+    .blog-card-body p { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+    .blog-card-body .read-more { color: var(--gold); font-weight: 700; font-size: 13px; text-decoration: none; letter-spacing: 0.5px; }
+    .blog-card-body .read-more:hover { text-decoration: underline; }
+    .blog-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
+    footer { background: var(--black); color: #aaa; padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .footer-logo img { height: 55px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+    .footer-logo p { font-size: 14px; line-height: 1.6; color: #888; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { color: #888; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-col p { font-size: 14px; color: #888; line-height: 1.7; }
+    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding: 20px 24px 0; border-top: 1px solid #222; display: flex; justify-content: space-between; font-size: 13px; color: #555; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .blog-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="tel:8313196492">📞 (831) 319-6492</a> &nbsp;|&nbsp; CSLB #723364 &nbsp;|&nbsp; Serving Santa Cruz, Monterey & South Bay
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="logo.png" alt="Peninsula Construction"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="our-work.html">Our Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section-black" style="padding:80px 0 100px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80') center/cover;opacity:0.10;"></div>
+    <div class="container" style="position:relative;text-align:center;">
+      <div class="section-label">KNOWLEDGE & RESOURCES</div>
+      <h1 style="color:#fff;margin-bottom:20px;">ADU Tips, Guides & <span style="color:var(--gold);">Construction Insights</span></h1>
+      <p style="color:#aaa;font-size:17px;max-width:600px;margin:0 auto;">Expert advice from 30+ years of ADU construction on the Central Coast. Learn what to expect, how to plan, and how to maximize your investment.</p>
+    </div>
+  </section>
+
+  <!-- CHEVRON BLACK → CREAM -->
+  <div style="background:#FDF6E9;">
+    <div style="line-height:0;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#0a0a0a"/></svg></div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <section class="section-white section-pad">
+    <div class="container">
+      <div class="section-label-dark">LATEST ARTICLES</div>
+      <h2>ADU Resources from the Experts</h2>
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="ADU Cost Guide">
+          <div class="blog-card-body">
+            <span class="blog-tag">ADU Costs</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 8 min read</div>
+            <h3>How Much Does an ADU Cost in Santa Cruz County in 2026?</h3>
+            <p>A complete breakdown of ADU construction costs — from foundation to finish — including permits, design, and all-in pricing you can budget with confidence.</p>
+            <a href="blog-adu-cost-santa-cruz-2026.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="ADU Permits">
+          <div class="blog-card-body">
+            <span class="blog-tag">Permits</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 10 min read</div>
+            <h3>The Complete ADU Permit Guide for Santa Cruz & Monterey Counties</h3>
+            <p>What permits do you need, how long does it take, and what can slow you down? We break down the full permit process from application to final inspection.</p>
+            <a href="blog-adu-permit-guide.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1582063289852-62e3ba2747f8?w=600&q=80" alt="Garage Conversion">
+          <div class="blog-card-body">
+            <span class="blog-tag">Garage Conversion</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 9 min read</div>
+            <h3>Garage Conversion ADU: Is It the Right Move for Your Property?</h3>
+            <p>Garage conversions are the most affordable ADU path — but they're not right for every property. Here's how to know if yours qualifies and what to expect.</p>
+            <a href="blog-garage-conversion-adu.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="ADU ROI">
+          <div class="blog-card-body">
+            <span class="blog-tag">Investment</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 9 min read</div>
+            <h3>ADU Return on Investment: How Long Until Your ADU Pays for Itself?</h3>
+            <p>Real numbers from Central Coast rental markets. We break down rental income potential, all-in costs, and realistic payback timelines for different ADU types.</p>
+            <a href="blog-adu-roi.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="ADU Design">
+          <div class="blog-card-body">
+            <span class="blog-tag">Design</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 7 min read</div>
+            <h3>5 ADU Design Mistakes That Cost Homeowners Thousands</h3>
+            <p>After 30 years of building ADUs, we've seen what works and what doesn't. These five design decisions can make or break your ADU's rental appeal and long-term value.</p>
+            <a href="blog-adu-design-mistakes.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img class="blog-card-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="ADU Laws California">
+          <div class="blog-card-body">
+            <span class="blog-tag">Laws & Regulations</span>
+            <div class="blog-meta">June 2026 &nbsp;|&nbsp; 8 min read</div>
+            <h3>California ADU Laws in 2026: What Every Homeowner Needs to Know</h3>
+            <p>AB 68, SB 9, AB 2221 — California has passed dozens of ADU-friendly laws. Here's what they mean for your property and how to take advantage of them.</p>
+            <a href="blog-california-adu-laws-2026.html" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+
+      </div></div>
+    </div>
+  </section>
+
+  <!-- CHEVRON CREAM → BLACK -->
+  <div style="background:var(--black);">
+    <div style="line-height:0;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="section-black" style="padding:60px 0;">
+    <div class="container" style="text-align:center;">
+      <div class="section-label">READY TO BUILD?</div>
+      <h2 style="color:#fff;margin-bottom:16px;">Have Questions? Let's Talk.</h2>
+      <p style="color:#aaa;max-width:500px;margin:0 auto 32px;">30 minutes with Richard Rodriguez is worth more than hours of research. Get a free consultation and honest answers to your ADU questions.</p>
+      <a href="contact.html" class="btn-gold">Schedule Free Consultation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Peninsula Construction">
+        <p>30+ years building dreams across Santa Cruz, Monterey & the South Bay. ADU specialists. Design | Build | Deliver.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="city-pages/adu-contractor-watsonville/index.html">Watsonville</a></li>
+          <li><a href="city-pages/adu-contractor-santa-cruz/index.html">Santa Cruz</a></li>
+          <li><a href="city-pages/adu-contractor-capitola/index.html">Capitola</a></li>
+          <li><a href="city-pages/adu-contractor-monterey/index.html">Monterey</a></li>
+          <li><a href="city-pages/adu-contractor-seaside/index.html">Seaside</a></li>
+          <li><a href="city-pages/adu-contractor-hollister/index.html">Hollister</a></li>
+          <li><a href="city-pages/adu-contractor-gilroy/index.html">Gilroy</a></li>
+          <li><a href="city-pages/adu-contractor-san-jose/index.html">San Jose</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:8313196492" style="color:#C9A84C;">(831) 319-6492</a><br><br>
+          1185 San Andreas Rd<br>Watsonville, CA 95076<br><br>
+          CSLB #723364<br>Licensed Since 1996
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Peninsula Construction. All rights reserved.</span>
+      <span>Website by <a href="https://emberseo.ai" target="_blank">Ember SEO</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
