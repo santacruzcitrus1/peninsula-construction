@@ -1,607 +1,603 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Peninsula Construction</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --black: #0a0a0a;
-      --black2: #141414;
-      --gold: #C9A84C;
-      --gold-light: #E8C96A;
-      --white: #FDF6E9;
-      --gray-light: #FDF6E9;
-      --gray-mid: #e0e0e0;
-      --text-dark: #1a1a1a;
-      --text-mid: #444;
-    }
-    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peninsula Construction | ADU Specialists | Central Coast California</title>
+<meta name="description" content="Peninsula Construction specializes in ADU design and construction across the Central Coast of California. 30+ years experience. Full-process from permits to build. Call (831) 319-6492.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --dark: #1a1a1a;
+    --gray-text: rgb(83,83,91);
+    --heading-color: rgb(14,17,51);
+    --gold: #C9A84C;
+    --gold-light: rgb(235,201,133);
+    --gray-bg: #f5f5f5;
+    --border: #e0e0e0;
+  }
 
-    /* ── NAV ── */
-    .top-bar {
-      background: #ffffff;
-      color: var(--text-dark);
-      text-align: center;
-      padding: 8px 20px;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-    }
-    .top-bar a { color: var(--gold); text-decoration: none; }
-    nav {
-      background: #FDF6E9;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 80px;
-    }
-    .nav-logo img { height: 75px; width: auto; }
-    .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border-radius: 4px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-links a.active { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold);
-      color: var(--black) !important;
-      padding: 10px 20px !important;
-      border-radius: 4px;
-      font-weight: 700 !important;
-    }
-    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+  body { font-family: 'Lato', sans-serif; color: var(--gray-text); background: var(--white); font-size: 16px; line-height: 1.7; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--heading-color); font-weight: 700; margin-bottom: 15px; }
+  h1 { font-size: clamp(32px,5vw,58px); font-weight: 800; line-height: 1.1; }
+  h2 { font-size: clamp(26px,4vw,42px); line-height: 1.2; }
+  h3 { font-size: clamp(20px,3vw,28px); }
+  p { margin-bottom: 15px; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; height: auto; }
 
-    /* ── CHEVRON DIVIDERS ── */
-    .chevron-down {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--black);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
-    .chevron-down-white {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--white);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
-    .chevron-down-gray {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--gray-light);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
-    .chevron-up-white {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--white);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
-    .chevron-up-black {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--black);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
-    .chevron-up-gray {
-      width: 100%;
-      height: 62px;
-      margin-top: -2px;
-      display: block;
-      background: var(--gray-light);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
+  /* TOP BAR */
+  .top-bar { background: var(--dark); color: white; text-align: center; padding: 8px 20px; font-size: 13px; font-family: 'Lato', sans-serif; }
+  .top-bar a { color: var(--gold-light); margin: 0 10px; }
 
-    /* ── SECTIONS ── */
-    .section-black { background: var(--black); color: #fff; }
-    .section-white { background: #FDF6E9; color: var(--text-dark); }
-    .section-gray { background: var(--gray-light); color: var(--text-dark); }
-    .section-gold { background: var(--gold); color: var(--black); }
+  /* NAV */
+  nav { background: var(--white); padding: 0 40px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; height: 85px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+  .nav-logo img { height: 78px; padding: 4px 0; }
+  .nav-links { display: flex; align-items: center; justify-content: center; gap: 10px; list-style: none; }
+  .nav-links a { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--heading-color); padding: 8px 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--black); color: white !important; padding: 12px 22px !important; border-radius: 3px; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section-pad { padding: 80px 0; }
-    .section-pad-sm { padding: 50px 0; }
+  /* HERO */
+  .hero { position: relative; min-height: 680px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: url('hero 1 .png') center center / cover no-repeat; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.1)); }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; width: 100%; padding: 80px 60px; color: white; text-align: center; margin: 0 auto; }
+  .hero-badge { display: inline-block; background: var(--gold); color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 6px 16px; margin-bottom: 20px; border-radius: 2px; }
+  .hero h1 { color: white; margin-bottom: 20px; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 35px; max-width: 550px; margin-left: auto; margin-right: auto; }
+  .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary { background: var(--gold); color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 16px 32px; border-radius: 3px; transition: all 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--white); color: var(--black); }
+  .btn-outline { background: transparent; color: white; border: 2px solid white; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 14px 32px; border-radius: 3px; transition: all 0.2s; display: inline-block; }
+  .btn-outline:hover { background: white; color: var(--black); }
+  .btn-dark { background: var(--black); color: white; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 16px 32px; border-radius: 3px; transition: all 0.2s; display: inline-block; }
+  .btn-dark:hover { background: var(--gold); color: var(--black); }
 
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .section-label-dark {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      margin-bottom: 12px;
-    }
-    h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.15; }
-    h3 { font-size: 22px; font-weight: 700; }
-    p { line-height: 1.7; font-size: 15px; }
+  /* STATS BAR */
+  .stats-bar { background: var(--black); padding: 30px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stat { text-align: center; color: white; }
+  .stat-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: var(--gold-light); display: block; }
+  .stat-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); }
 
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-outline-white {
-      display: inline-block;
-      border: 2px solid #fff;
-      color: #fff;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 12px 30px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline-white:hover { background: #FDF6E9; color: var(--black); }
-    .btn-outline-black {
-      display: inline-block;
-      border: 2px solid var(--black);
-      color: var(--black);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 12px 30px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline-black:hover { background: var(--black); color: #fff; }
+  /* SECTIONS */
+  .section { padding: 80px 60px; }
+  .section-gray { background: var(--gray-bg); }
+  .section-dark { background: var(--dark); color: white; }
+  .section-dark h2, .section-dark h3 { color: white; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; display: block; text-align: center; }
+  .section-header { margin-bottom: 50px; text-align: center; }
+  .section-header h2 { text-align: center; }
+  .section-header p { font-size: 18px; color: var(--gray-text); max-width: 600px; text-align: center; margin: 0 auto; }
+  .hero-content { text-align: center; }
+  .hero-content h1 { text-align: center; }
+  .hero-content p { text-align: center; }
+  .hero-btns { justify-content: center; display: flex; gap: 16px; flex-wrap: wrap; }
 
-    /* ── STATS BAR ── */
-    .stats-bar { background: var(--gold); padding: 30px 0; }
-    .stats-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
-    .stat-item { text-align: center; }
-    .stat-num { font-size: 38px; font-weight: 900; color: var(--black); line-height: 1; }
-    .stat-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--black); margin-top: 4px; opacity: 0.75; }
+  /* DIFFERENCE CARDS */
+  .diff-grid { display: grid; grid-template-columns: repeat(4,minmax(280px,1fr)); gap: 96px; max-width: 1600px; margin: 0 auto; padding: 0 40px; }
+  .diff-card { position: relative; height: 605px; overflow: hidden; }
+  .diff-card img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.5s ease; }
+  .diff-card:hover img { transform: scale(1.05); }
+  .diff-card-overlay { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 32px); padding: 22px 24px; background: rgba(255,255,255,0.18); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; text-align: center; box-shadow: 0 0 0 rgba(255,255,255,0); transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+  .diff-card:hover .diff-card-overlay { box-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 8px rgba(255,255,255,0.35); border-color: rgba(255,255,255,0.75); }
+  .diff-card h3 { font-size: 19px; color: #fff; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.01em; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+  .diff-card p { font-size: 13px; color: #ffffff; margin: 0; line-height: 1.6; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--black);
-      color: #aaa;
-      padding: 60px 0 30px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .footer-logo img { height: 55px; margin-bottom: 16px; filter: brightness(0) invert(1); }
-    .footer-logo p { font-size: 14px; line-height: 1.6; color: #888; }
-    .footer-col h4 {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 8px; }
-    .footer-col ul li a { color: #888; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-col p { font-size: 14px; color: #888; line-height: 1.7; }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding: 20px 24px 0;
-      border-top: 1px solid #222;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: #555;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .footer-bottom a { color: var(--gold); text-decoration: none; }
+  /* SERVICES GRID */
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; }
+  .service-card { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; cursor: pointer; transition: box-shadow 0.3s ease; }
+  .service-card:hover { box-shadow: 0 0 18px 4px rgba(220,220,230,0.55), 0 0 6px 1px rgba(255,255,255,0.3); }
+  .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .service-card:hover img { transform: scale(1.05); }
+  .service-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; }
+  .service-card-overlay h3 { color: white; font-size: 20px; margin: 0; }
+  .service-card-overlay span { color: var(--gold-light); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .service-link { color: white; font-size: 13px; margin-top: 8px; text-decoration: underline; opacity: 0; transition: opacity 0.2s; }
+  .service-card:hover .service-link { opacity: 1; }
 
-    /* ── PAGE HERO (inner pages) ── */
-    .page-hero {
-      background: var(--black);
-      padding: 80px 0 100px;
-      text-align: center;
-      position: relative;
-    }
-    .page-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: #fff; letter-spacing: -1px; }
-    .page-hero .gold { color: var(--gold); }
-    .page-hero p { color: #aaa; font-size: 17px; margin-top: 16px; }
-    .breadcrumb { font-size: 12px; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; counter-reset: step; }
+  .process-step { text-align: center; padding: 30px 20px; position: relative; counter-increment: step; background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--gold-light); border-radius: 8px; transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+  .process-step:hover { box-shadow: 0 0 18px 3px rgba(235,201,133,0.45); border-color: #f5d98a; }
+  .process-step::before { content: counter(step); font-family: 'Montserrat', sans-serif; font-size: 60px; font-weight: 800; color: var(--gold-light); opacity: 0.3; display: block; line-height: 1; margin-bottom: 15px; }
+  .process-step h3 { font-size: 18px; color: white; margin-bottom: 10px; }
+  .process-step p { font-size: 14px; color: rgba(255,255,255,0.85); margin: 0; }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .stats-grid { gap: 30px; }
-    }
+  /* PROJECTS GRID */
+  .projects-filter { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+  .filter-btn { background: white; border: 1px solid var(--border); padding: 8px 20px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+  .filter-btn:hover, .filter-btn.active { background: var(--black); color: white; border-color: var(--black); }
+  .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .project-card { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; }
+  .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .project-card:hover img { transform: scale(1.05); }
+  .project-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); padding: 30px 20px 20px; color: white; }
+  .project-info h4 { font-size: 18px; margin: 0; color: white; }
+  .project-info span { font-size: 12px; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+  .testimonial-card { background: rgba(255,255,255,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 35px; border-radius: 4px; border: 2px solid rgba(0,0,0,0.15); transition: box-shadow 0.3s ease; }
+  .testimonial-card:hover { box-shadow: 0 0 18px rgba(200,200,200,0.5); }
+  .stars { color: var(--gold); font-size: 18px; margin-bottom: 15px; }
+  .testimonial-text { font-size: 15px; font-style: italic; color: #333333; margin-bottom: 20px; line-height: 1.7; }
+  .testimonial-author { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #111111; }
+  .testimonial-location { font-size: 13px; color: var(--gold); }
+
+  /* FAQ */
+  .faq-list { max-width: 800px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--heading-color); }
+  .faq-question span { color: var(--gold); font-size: 20px; }
+  .faq-answer { font-size: 15px; color: var(--gray-text); padding: 0 0 20px; display: none; line-height: 1.7; }
+  .faq-item.open .faq-answer { display: block; }
+  .faq-item.open .faq-question span { transform: rotate(45deg); display: inline-block; }
+
+  /* SERVICE AREAS */
+  .cities-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; }
+  .city-card { background: #555555; border: 2px solid #3a3a3a; padding: 20px; text-align: center; border-radius: 4px; transition: all 0.2s; }
+  .city-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,76,0.2); }
+  .city-card a { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; }
+  .city-card:hover a { color: var(--gold); }
+
+  /* CTA SECTION */
+  .cta-section { background: var(--black); padding: 80px 60px; text-align: center; }
+  .cta-section h2 { color: white; margin-bottom: 15px; }
+  .cta-section p { color: rgba(255,255,255,0.8); font-size: 18px; margin-bottom: 35px; }
+
+  /* CONTACT FORM */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  .form-group { margin-bottom: 15px; }
+  .form-group label { display: block; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--heading-color); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid var(--border); border-radius: 3px; font-family: 'Lato', sans-serif; font-size: 15px; color: var(--gray-text); background: white; transition: border-color 0.2s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+  .form-group textarea { height: 120px; resize: vertical; }
+  .contact-info h3 { margin-bottom: 25px; }
+  .contact-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+  .contact-icon { width: 45px; height: 45px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .contact-item h4 { font-size: 14px; margin-bottom: 3px; }
+  .contact-item p { font-size: 15px; margin: 0; color: var(--gray-text); }
+  .license-badge { background: var(--gray-bg); border: 1px solid var(--border); border-radius: 4px; padding: 20px; margin-top: 30px; }
+  .license-badge h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 5px; }
+  .license-badge p { margin: 0; font-size: 15px; font-weight: 600; color: var(--heading-color); }
+
+  /* FOOTER */
+  footer { background: var(--dark); color: white; padding: 60px 60px 30px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand img { height: 165px; margin-top: -45px; margin-bottom: 20px; background-color: #1a1a1a; }
+  .footer-brand p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
+  .footer-col h4 { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.6); font-size: 14px; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; margin: 0; }
+  .footer-bottom a { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+  /* SPLIT SECTIONS */
+  .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 500px; }
+  .split-image { overflow: hidden; }
+  .split-image img { width: 100%; height: 100%; object-fit: cover; }
+  .split-content { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; }
+  .split-section.reverse .split-image { order: 2; }
+  .split-section.reverse .split-content { order: 1; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 60px 20px; }
+    .stats-bar { grid-template-columns: repeat(2,1fr); padding: 30px 20px; }
+    .section { padding: 60px 20px; }
+    .diff-grid, .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
+    .cities-grid { grid-template-columns: repeat(2,1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .split-section { grid-template-columns: 1fr; }
+    .split-section.reverse .split-image { order: 0; }
+    .split-section.reverse .split-content { order: 0; }
+    .cta-section { padding: 60px 20px; }
+  }
 </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <a href="tel:8313196492">📞 (831) 319-6492</a> &nbsp;|&nbsp; CSLB #723364 &nbsp;|&nbsp; Serving Santa Cruz, Monterey & South Bay
+<!-- TOP BAR -->
+<div class="top-bar">
+  📞 Call or Text: <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; 
+  📧 <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp; 
+  CSLB #723364 | Licensed Since 1996
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a>
   </div>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-logo" href="index.html"><img src="logo.png" alt="Peninsula Construction"></a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="services.html" >Services</a></li>
-        <li><a href="process.html" >Our Process</a></li>
-        <li><a href="our-work.html" >Our Work</a></li>
-        <li><a href="about.html" >About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" >Contact</a></li>
-        <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
-      </ul>
-    </div>
-  </nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Our Process</a></li>
+    <li><a href="our-work.html">Our Work</a></li>
+    <li><a href="about.html">About</a></li><li><a href="financing.html">Financing</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
+  </ul>
+</nav>
 
-
-  <!-- HERO -->
-  <section class="section-black" style="padding: 100px 0 0; position:relative; overflow:hidden;">
-    <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80') center/cover;"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.18) 0%,rgba(0,0,0,0.08) 100%);"></div>
-    <div class="container" style="position:relative;text-align:center;">
-      <div class="section-label">ADU SPECIALISTS — SANTA CRUZ & MONTEREY</div>
-      <h1 style="font-size:clamp(38px,6vw,70px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;">
-        We Design,<br>Build &amp; Deliver<br><span style="color:var(--gold);">Your Dream ADU.</span>
-      </h1>
-      <p style="color:#aaa;font-size:18px;max-width:600px;margin:0 auto 36px;">
-        30+ years of trusted construction. Full-process specialists — permits, design, and build. All-in pricing from $135K.
-      </p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn-gold">Get a Free Quote</a>
-        <a href="services.html" class="btn-outline-white">View Services</a>
-      </div>
-      <div style="margin-top:60px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding-bottom:80px;">
-        <div style="text-align:center;color:#fff;">
-          <div style="font-size:13px;letter-spacing:2px;color:#666;text-transform:uppercase;">Licensed</div>
-          <div style="font-weight:700;color:var(--gold);">Since 1996</div>
-        </div>
-        <div style="width:1px;background:#333;"></div>
-        <div style="text-align:center;">
-          <div style="font-size:13px;letter-spacing:2px;color:#666;text-transform:uppercase;">CSLB</div>
-          <div style="font-weight:700;color:var(--gold);">#723364</div>
-        </div>
-        <div style="width:1px;background:#333;"></div>
-        <div style="text-align:center;">
-          <div style="font-size:13px;letter-spacing:2px;color:#666;text-transform:uppercase;">All-In Pricing</div>
-          <div style="font-weight:700;color:var(--gold);">From $135K</div>
-        </div>
-        <div style="width:1px;background:#333;"></div>
-        <div style="text-align:center;">
-          <div style="font-size:13px;letter-spacing:2px;color:#666;text-transform:uppercase;">Timeline</div>
-          <div style="font-weight:700;color:var(--gold);">6–9 Months</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR (gold) -->
-  <div class="stats-bar">
-    <div class="stats-grid container">
-      <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Years Experience</div></div>
-      <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Projects Completed</div></div>
-      <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">ADU Types</div></div>
-      <div class="stat-item"><div class="stat-num">11</div><div class="stat-label">Cities Served</div></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Design-Build Specialists — Central Coast California</span>
+    <h1>We Design, Build &amp; Deliver Your Dream ADU</h1>
+    <p>30+ years of construction excellence. Full-process from permits to completion. Serving Watsonville, Santa Cruz, Monterey &amp; beyond.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary">Get a Free Estimate</a>
+      <a href="our-work.html" class="btn-outline">View Our Work</a>
     </div>
   </div>
+</section>
 
-  <!-- WHITE: WHY PENINSULA -->
-  <section class="section-white section-pad">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-        <div>
-          <div class="section-label-dark">WHY PENINSULA CONSTRUCTION</div>
-          <h2 style="margin-bottom:20px;">The Full-Process ADU Specialists</h2>
-          <p style="color:var(--text-mid);margin-bottom:20px;">
-            Most contractors hand you off between designers, permit runners, and builders. Not us. Peninsula Construction handles everything — from initial design concepts to permits to the final walkthrough. One team, one point of contact, one price.
-          </p>
-          <p style="color:var(--text-mid);margin-bottom:32px;">
-            As real estate investors ourselves with 12+ years of experience, we understand what makes an ADU a smart investment — not just a nice addition.
-          </p>
-          <a href="about.html" class="btn-outline-black">Meet Richard</a>
-        </div>
-        <div style="position:relative;">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="ADU Construction" style="width:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.15);">
-          <div style="position:absolute;bottom:-20px;left:-20px;background:var(--gold);padding:20px 24px;border-radius:4px;">
-            <div style="font-size:28px;font-weight:900;color:var(--black);">12+</div>
-            <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--black);text-transform:uppercase;">Years as Real Estate Investors</div>
-          </div>
-        </div>
-      </div>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Years in Business</span></div>
+  <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Projects Completed</span></div>
+  <div class="stat"><span class="stat-num">$135K</span><span class="stat-label">ADUs Starting At</span></div>
+  <div class="stat"><span class="stat-num">12</span><span class="stat-label">Cities Served</span></div>
+</div>
+
+<!-- LARGE CENTERED LOGO -->
+<div style="text-align: center; padding: 50px 20px 20px; background: #fff;">
+  <img src="Use this logo.png" alt="Peninsula Construction" style="max-width: 550px; width: 80%; height: auto;">
+</div>
+
+<!-- THE PENINSULA DIFFERENCE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" style="font-size: 18px; letter-spacing: 4px;">Why Choose Us</span>
+      <h2>The Peninsula Construction Difference</h2>
+      <p>We don't just build structures — we build long-term value into your property. Here's what sets us apart.</p>
     </div>
-  </section>
-
-  <!-- CHEVRON WHITE → BLACK -->
-  <div style="background:var(--black);">
-    <div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
   </div>
-
-  <!-- BLACK: SERVICES PREVIEW -->
-  <section class="section-gray section-pad">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:50px;">
-        <div class="section-label">WHAT WE BUILD</div>
-        <h2 style="color:#fff;">From ADUs to Full Home Builds</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">🏠</div>
-          <h3 style="color:#fff;margin-bottom:10px;">ADU Construction</h3>
-          <p style="color:#888;font-size:14px;">Detached, attached, garage conversion, JADU, two-story. Full-process from $135K all-in.</p>
-        </div>
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">🏗️</div>
-          <h3 style="color:#fff;margin-bottom:10px;">Room Additions</h3>
-          <p style="color:#888;font-size:14px;">Expand your living space seamlessly. Master suites, family rooms, bonus spaces.</p>
-        </div>
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">🔨</div>
-          <h3 style="color:#fff;margin-bottom:10px;">Kitchen & Bath Remodels</h3>
-          <p style="color:#888;font-size:14px;">High-end finishes, smart layouts, full project management from demo to done.</p>
-        </div>
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">🏡</div>
-          <h3 style="color:#fff;margin-bottom:10px;">New Home Builds</h3>
-          <p style="color:#888;font-size:14px;">Ground-up construction on your lot. Custom design, full permits, built to last.</p>
-        </div>
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">🏢</div>
-          <h3 style="color:#fff;margin-bottom:10px;">Garage Conversions</h3>
-          <p style="color:#888;font-size:14px;">The most cost-effective path to an ADU. Full conversion with permits handled.</p>
-        </div>
-        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:32px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='#2a2a2a'">
-          <div style="font-size:32px;margin-bottom:16px;">📐</div>
-          <h3 style="color:#fff;margin-bottom:10px;">Development Projects</h3>
-          <p style="color:#888;font-size:14px;">Larger scale residential development. We know how to maximize a property's potential.</p>
+</div>
+<div>
+  <div class="diff-grid">
+      <div class="diff-card">
+        <img src="box 1.jpg" alt="Full-Process Specialists" style="object-position: center;">
+        <div class="diff-card-overlay">
+          <h3>Full-Process Specialists</h3>
+          <p>From initial design and permits all the way through final inspection — we handle every step so you don't have to coordinate multiple contractors.</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a href="services.html" class="btn-gold">See All Services</a>
+      <div class="diff-card">
+        <img src="we'll take over.jpg" alt="We'll Take Over" style="object-position: center;">
+        <div class="diff-card-overlay">
+          <h3>Stuck Mid-Project? We'll Take Over.</h3>
+          <p>Already have blueprints, permits, or a build in progress? Whether you've hit a wall or your GC walked off the job, we can step in at any stage and get you across the finish line.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <img src="garage conversion 1.jpg" alt="30 Years of Experience" style="object-position: center;">
+        <div class="diff-card-overlay">
+          <h3>30 Years of Experience</h3>
+          <p>Licensed since 1996, Richard Rodriguez has built hundreds of projects across Santa Cruz County. You get decades of expertise on every job.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <img src="kitchen remodeling 1.jpg" alt="Direct Owner Access" style="object-position: center;">
+        <div class="diff-card-overlay">
+          <h3>Direct Owner Access</h3>
+          <p>You work directly with Richard — not a sales team or project manager. Transparent pricing, honest timelines, no surprises.</p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- CHEVRON BLACK → GRAY -->
-  <div style="background:var(--gray-light);">
-    <div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
   </div>
+</section>
 
-  <!-- GRAY: PROCESS TEASER -->
-  <section class="section-gray section-pad">
-    <div class="container" style="text-align:center;">
-      <div class="section-label-dark">HOW WE WORK</div>
-      <h2 style="margin-bottom:16px;">Design. Build. Deliver.</h2>
-      <p style="color:var(--text-mid);max-width:600px;margin:0 auto 50px;">Our proven 6-step process has delivered 200+ projects on time and on budget. No surprises, no hand-offs.</p>
-      <div style="display:flex;justify-content:center;gap:0;flex-wrap:wrap;">
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--black);margin-bottom:12px;">1</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Free Consultation</div>
-        </div>
-        <div style="display:flex;align-items:center;padding-bottom:30px;color:#ccc;font-size:24px;">→</div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--black);margin-bottom:12px;">2</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Design Options</div>
-        </div>
-        <div style="display:flex;align-items:center;padding-bottom:30px;color:#ccc;font-size:24px;">→</div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--black);margin-bottom:12px;">3</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Permits &amp; Plans</div>
-        </div>
-        <div style="display:flex;align-items:center;padding-bottom:30px;color:#ccc;font-size:24px;">→</div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--black);margin-bottom:12px;">4</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Construction</div>
-        </div>
-        <div style="display:flex;align-items:center;padding-bottom:30px;color:#ccc;font-size:24px;">→</div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--black);margin-bottom:12px;">5</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Inspections</div>
-        </div>
-        <div style="display:flex;align-items:center;padding-bottom:30px;color:#ccc;font-size:24px;">→</div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:160px;padding:16px;">
-          <div style="width:50px;height:50px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:var(--gold);margin-bottom:12px;">6</div>
-          <div style="font-weight:700;font-size:13px;text-align:center;">Final Delivery</div>
+<!-- SERVICES -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Build</span>
+      <h2>Our Services</h2>
+      <p>From ADUs to full home additions — we're your one-stop design-build contractor across the Central Coast.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="adu-modern.jpg" alt="ADU Construction">
+        <div class="service-card-overlay">
+          <span>Most Popular</span>
+          <h3>ADU Construction</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
         </div>
       </div>
-      <a href="process.html" class="btn-outline-black" style="margin-top:20px;">Learn About Our Process</a>
+      <div class="service-card">
+        <img src="garage 1.jpg" alt="Garage Conversion">
+        <div class="service-card-overlay">
+          <span>Cost Effective</span>
+          <h3>Garage Conversions</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="kitchen 1.jpg" alt="Kitchen Remodel">
+        <div class="service-card-overlay">
+          <span>Transform Your Home</span>
+          <h3>Kitchen &amp; Bath Remodels</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="addition 1.jpg" alt="Room Addition">
+        <div class="service-card-overlay">
+          <span>Expand Your Space</span>
+          <h3>Room Additions</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="New Home Build">
+        <div class="service-card-overlay">
+          <span>Build From Scratch</span>
+          <h3>New Home Builds</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Development">
+        <div class="service-card-overlay">
+          <span>Investors Welcome</span>
+          <h3>Ground-Up Development</h3>
+          <a href="services.html" class="service-link">Learn more →</a>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- CHEVRON GRAY → BLACK -->
-  <div style="background:var(--black);">
-    <div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="services.html" class="btn-dark">Explore All Services</a>
+    </div>
   </div>
+</section>
 
-  <!-- BLACK: CTA BANNER -->
-  <section class="section-white section-pad-sm">
-    <div class="container" style="text-align:center;">
-      <div class="section-label">READY TO BUILD?</div>
-      <h2 style="color:#fff;margin-bottom:16px;">Get Your Free Property Evaluation Today</h2>
-      <p style="color:#aaa;max-width:550px;margin:0 auto 32px;">We'll assess your property, walk you through your ADU options, and give you a transparent all-in estimate. No pressure, no surprises.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn-gold">Request Free Quote</a>
-        <a href="tel:8313196492" class="btn-outline-white">📞 (831) 319-6492</a>
+<!-- PROCESS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" style="color:var(--gold-light)">How It Works</span>
+      <h2 style="color:white">Design. Build. Deliver.</h2>
+      <p style="color:rgba(255,255,255,0.7)">Our proven process takes your ADU from concept to move-in ready — with zero stress on your end.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <h3>Free Consultation</h3>
+        <p>We visit your property, assess your goals, and give you a transparent estimate — no obligation, no pressure.</p>
+      </div>
+      <div class="process-step">
+        <h3>Design &amp; Permits</h3>
+        <p>We handle architectural plans, city permits, and all approvals. You just review and sign off.</p>
+      </div>
+      <div class="process-step">
+        <h3>Construction</h3>
+        <p>Our crew builds your ADU on schedule with regular updates. Richard is on-site, not in an office.</p>
+      </div>
+      <div class="process-step">
+        <h3>Final Delivery</h3>
+        <p>We complete final inspections, clean up the site, and hand you the keys — ready to rent or use immediately.</p>
       </div>
     </div>
-  </section>
-
-
-  <!-- CHEVRON BLACK → CREAM (before service areas) -->
-  <div style="background:#FDF6E9;">
-    <div style="line-height:0;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="process.html" class="btn-primary">Learn About Our Process</a>
+    </div>
   </div>
+</section>
 
-  <!-- SERVICE AREAS -->
-  <section id="service-areas" class="section-white" style="padding:80px 0;">
-    <div class="container" style="text-align:center;">
-      <div class="section-label-dark">WHERE WE BUILD</div>
-      <h2 style="margin-bottom:16px;">Serving 11 Cities Across 4 Counties</h2>
-      <p style="color:var(--text-mid);max-width:650px;margin:0 auto 50px;">Peninsula Construction builds ADUs throughout Santa Cruz, Monterey, San Benito, and Santa Clara Counties. Click your city to learn more.</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-        <a href="city-pages/adu-contractor-watsonville/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Watsonville</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Cruz County</div>
-        </a>
-        <a href="city-pages/adu-contractor-santa-cruz/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Santa Cruz</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Cruz County</div>
-        </a>
-
-        <a href="city-pages/adu-contractor-capitola/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Capitola</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Cruz County</div>
-        </a>
-        <a href="city-pages/adu-contractor-marina/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Marina</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Monterey County</div>
-        </a>
-        <a href="city-pages/adu-contractor-seaside/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Seaside</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Monterey County</div>
-        </a>
-        <a href="city-pages/adu-contractor-monterey/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Monterey</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Monterey County</div>
-        </a>
-        <a href="city-pages/adu-contractor-pacific-grove/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Pacific Grove</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Monterey County</div>
-        </a>
-        <a href="city-pages/adu-contractor-gilroy/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Gilroy</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Clara County</div>
-        </a>
-        <a href="city-pages/adu-contractor-morgan-hill/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Morgan Hill</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Clara County</div>
-        </a>
-        <a href="city-pages/adu-contractor-hollister/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">Hollister</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">San Benito County</div>
-        </a>
-        <a href="city-pages/adu-contractor-san-jose/index.html" style="display:block;background:#0a0a0a;border:2px solid #C9A84C;border-radius:8px;padding:24px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 18px rgba(201,168,76,0.65)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-          <div style="font-weight:700;color:#C9A84C;font-size:15px;letter-spacing:0.5px;">San Jose</div>
-          <div style="font-size:12px;color:#999;margin-top:4px;">Santa Clara County</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHEVRON CREAM → BLACK (before footer) -->
-  <div style="background:#0a0a0a;">
-    <div style="line-height:0;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div>
+<!-- FEATURED PROJECT (SPLIT) -->
+<section class="split-section">
+  <div class="split-image">
+    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="ADU Project">
   </div>
+  <div class="split-content" style="background:var(--gray-bg)">
+    <span class="section-label">Real Estate Investors</span>
+    <h2>Maximize Your Property's Value</h2>
+    <p>Richard Rodriguez isn't just a contractor — he's a real estate investor of 12 years. He understands what it takes to turn an ADU into a cash-flowing asset.</p>
+    <p>Every project comes with a complimentary property evaluation and after-build value assessment so you know exactly what return to expect.</p>
+    <ul style="margin:20px 0 30px; padding-left:20px; color:var(--gray-text);">
+      <li style="margin-bottom:8px">ADU rental income: $2,200–$3,500/mo in Santa Cruz County</li>
+      <li style="margin-bottom:8px">Typical ROI: full payback in 5–8 years</li>
+      <li style="margin-bottom:8px">Property value increase: 20–30% after ADU addition</li>
+      <li style="margin-bottom:8px">Financing options up to $100K available</li>
+    </ul>
+    <a href="contact.html" class="btn-dark">Get Your Free Property Evaluation</a>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer style="background:#0a0a0a;color:#aaa;padding:60px 0 30px;">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px;">
-        <div>
-          <img src="logo.png" alt="Peninsula Construction" style="height:60px;margin-bottom:20px;filter:brightness(0) invert(1);">
-          <p style="font-size:14px;line-height:1.7;color:#888;max-width:280px;">Full-process ADU specialists serving Santa Cruz, Monterey, San Benito &amp; Santa Clara Counties since 1996.</p>
-          <div style="margin-top:20px;font-size:13px;color:#666;">CSLB License #723364</div>
-        </div>
-        <div>
-          <div style="color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">Pages</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li><a href="index.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Home</a></li>
-            <li><a href="services.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Services</a></li>
-            <li><a href="process.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Our Process</a></li>
-            <li><a href="our-work.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Our Work</a></li>
-            <li><a href="about.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">About</a></li>
-            <li><a href="blog.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Blog</a></li>
-            <li><a href="contact.html" style="color:#888;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <div style="color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">Service Areas</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li><a href="city-pages/adu-contractor-watsonville/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Watsonville</a></li>
-            <li><a href="city-pages/adu-contractor-santa-cruz/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Santa Cruz</a></li>
-            <li><a href="city-pages/adu-contractor-capitola/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Capitola</a></li>
-            <li><a href="city-pages/adu-contractor-marina/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Marina</a></li>
-            <li><a href="city-pages/adu-contractor-seaside/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Seaside</a></li>
-            <li><a href="city-pages/adu-contractor-monterey/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Monterey</a></li>
-          </ul>
-        </div>
-        <div>
-          <div style="color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">More Cities</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li><a href="city-pages/adu-contractor-pacific-grove/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Pacific Grove</a></li>
-            <li><a href="city-pages/adu-contractor-gilroy/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Gilroy</a></li>
-            <li><a href="city-pages/adu-contractor-morgan-hill/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Morgan Hill</a></li>
-            <li><a href="city-pages/adu-contractor-hollister/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">Hollister</a></li>
-            <li><a href="city-pages/adu-contractor-san-jose/index.html" style="color:#888;text-decoration:none;font-size:14px;" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#888'">San Jose</a></li>
-          </ul>
-          <div style="margin-top:30px;">
-            <div style="color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Contact</div>
-            <div style="font-size:14px;color:#888;line-height:2;">
-              <a href="tel:8313196492" style="color:#C9A84C;text-decoration:none;">(831) 319-6492</a><br>
-              <a href="mailto:richrod@peninsula.construction" style="color:#888;text-decoration:none;">richrod@peninsula.construction</a><br>
-              1185 San Andreas Rd<br>Watsonville, CA 95076
-            </div>
-          </div>
-        </div>
+<!-- TESTIMONIALS -->
+<section class="section" style="background: #f0f0f0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Client Reviews</span>
+      <h2>In Their Own Words</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Richard and his team built our ADU from start to finish. Permits, design, construction — they handled everything. We were renting it out within 6 months and it completely pays for itself."</p>
+        <div class="testimonial-author">Maria G.</div>
+        <div class="testimonial-location">Watsonville, CA</div>
       </div>
-      <div style="border-top:1px solid #222;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-        <div style="font-size:13px;color:#555;">© 2026 Peninsula Construction. CSLB #723364. All rights reserved.</div>
-        <div style="font-size:12px;color:#444;">Website by <a href="https://emberseo.ai" style="color:#C9A84C;text-decoration:none;">Ember SEO</a></div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We converted our garage into a beautiful 1-bedroom unit. Richard gave us a straight price upfront and delivered on time. No change orders, no surprises. Rare to find that kind of integrity."</p>
+        <div class="testimonial-author">Tom &amp; Linda M.</div>
+        <div class="testimonial-location">Santa Cruz, CA</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"30+ years of experience shows. Our detached ADU is beautiful, well-built, and the city inspection passed on the first try. Peninsula Construction is the real deal — I've already referred two neighbors."</p>
+        <div class="testimonial-author">James R.</div>
+        <div class="testimonial-location">Monterey, CA</div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+      <div>
+        <span class="section-label">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about building an ADU in Santa Cruz County.</p>
+        <div style="margin-top:30px;">
+          <a href="contact.html" class="btn-dark">Ask Us a Question</a>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How much does an ADU cost in Santa Cruz County? <span>+</span></div>
+          <div class="faq-answer">Our ADUs range from $135,000 to $300,000 all-in, depending on size, type, and complexity. A garage conversion is typically on the lower end, while a detached two-story ADU is higher. We provide transparent pricing upfront with no hidden fees.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">How long does it take to build an ADU? <span>+</span></div>
+          <div class="faq-answer">Most ADU projects take 6–9 months from the initial consultation to final inspection. The permit process typically takes 2–4 months, and construction takes 3–5 months depending on complexity. We'll give you a detailed timeline at your free consultation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do you handle permits and design? <span>+</span></div>
+          <div class="faq-answer">Yes — we handle the entire process including architectural drawings, city permits, utility connections, and all inspections. You don't need to coordinate with anyone else. We're truly full-process from day one to keys in hand.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">What types of ADUs do you build? <span>+</span></div>
+          <div class="faq-answer">We build detached ADUs, attached ADUs, garage conversions, JADUs (Junior ADUs), and two-story ADUs. We also offer three standard design options for 2-bedroom units under 750 sq ft — great for keeping costs predictable.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is financing available? <span>+</span></div>
+          <div class="faq-answer">Yes — we offer financing options up to $100,000 with every estimate. We can walk you through ADU-specific financing products like HELOCs, construction loans, and renovation loans to find what works best for your situation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Where We Work</span>
+      <h2>Serving 11 Cities Across 4 Counties</h2>
+      <p>Peninsula Construction serves homeowners and real estate investors throughout the Central Coast of California.</p>
+      <p style="margin-top: 10px; font-size: 0.95rem; color: #555;">Don't see your city? <a href="#contact" style="color: #EBC985; font-weight: 600; text-decoration: none; border-bottom: 1px solid #EBC985;">Contact us</a> — we serve the entire Central Coast.</p>
+    </div>
+    <div class="cities-grid">
+      <div class="city-card"><a href="city-pages/watsonville.html">Watsonville</a></div>
+      <div class="city-card"><a href="city-pages/santa-cruz.html">Santa Cruz</a></div>
+      <div class="city-card"><a href="city-pages/monterey.html">Monterey</a></div>
+      <div class="city-card"><a href="city-pages/capitola.html">Capitola</a></div>
+      <div class="city-card"><a href="city-pages/seaside.html">Seaside</a></div>
+      <div class="city-card"><a href="city-pages/marina.html">Marina</a></div>
+      <div class="city-card"><a href="city-pages/pacific-grove.html">Pacific Grove</a></div>
+      <div class="city-card"><a href="city-pages/gilroy.html">Gilroy</a></div>
+      <div class="city-card"><a href="city-pages/morgan-hill.html">Morgan Hill</a></div>
+      <div class="city-card"><a href="city-pages/hollister.html">Hollister</a></div>
+      <div class="city-card"><a href="city-pages/san-jose.html">San Jose</a></div>
+      <div class="city-card"><a href="city-pages/salinas.html">Salinas</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Build Your ADU?</h2>
+    <p>Get a free consultation and transparent estimate from Richard Rodriguez himself — no sales team, no runaround.</p>
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">Schedule a Free Consultation</a>
+      <a href="tel:8313196492" class="btn-outline">Call (831) 319-6492</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="download (2).jpg" alt="Peninsula Construction Logo" style="height: 165px; width: auto;">
+        <p>30+ years of design-build excellence across the Central Coast. ADU specialists serving Watsonville, Santa Cruz, Monterey and beyond.</p>
+        <p style="margin-top:15px; color:rgba(255,255,255,0.4); font-size:13px;">CSLB #723364 | Licensed Since 1996</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="about.html">About</a></li><li><a href="financing.html">Financing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">ADU Construction</a></li>
+          <li><a href="services.html">Garage Conversions</a></li>
+          <li><a href="services.html">Room Additions</a></li>
+          <li><a href="services.html">Kitchen Remodels</a></li>
+          <li><a href="services.html">New Home Builds</a></li>
+          <li><a href="services.html">Development</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8313196492">(831) 319-6492</a></li>
+          <li><a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a></li>
+          <li><a href="#">1185 San Andreas Rd</a></li>
+          <li><a href="#">Watsonville, CA 95076</a></li>
+          <li><a href="city-pages/watsonville.html">Watsonville</a></li>
+          <li><a href="city-pages/santa-cruz.html">Santa Cruz</a></li>
+          <li><a href="city-pages/monterey.html">Monterey</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-cities">
+        <h4>Cities We Serve</h4>
+        <ul>
+          <li><a href="city-pages/santa-cruz.html">Santa Cruz</a></li>
+          <li><a href="city-pages/scotts-valley.html">Scotts Valley</a></li>
+          <li><a href="city-pages/capitola.html">Capitola</a></li>
+          <li><a href="city-pages/aptos.html">Aptos</a></li>
+          <li><a href="city-pages/watsonville.html">Watsonville</a></li>
+          <li><a href="city-pages/soquel.html">Soquel</a></li>
+          <li><a href="city-pages/santa-cruz-county.html">Santa Cruz County</a></li>
+          <li><a href="city-pages/monterey.html">Monterey</a></li>
+          <li><a href="city-pages/pacific-grove.html">Pacific Grove</a></li>
+          <li><a href="city-pages/carmel.html">Carmel</a></li>
+          <li><a href="city-pages/seaside.html">Seaside</a></li>
+          <li><a href="city-pages/salinas.html">Salinas</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Peninsula Construction. All rights reserved.</p>
+      <p>Designed by <a href="https://emberseo.ai">Ember SEO</a></p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

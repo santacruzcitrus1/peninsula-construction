@@ -1,200 +1,192 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Peninsula Construction</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --gold: #C9A84C; --gold-light: #E8C96A; --white: #FDF6E9; --gray-light: #FDF6E9; --gray-mid: #e0e0e0; --text-dark: #1a1a1a; --text-mid: #444; }
-    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); }
-    .top-bar { background: var(--black); color: #fff; text-align: center; padding: 8px 20px; font-size: 13px; }
-    .top-bar a { color: var(--gold-light); text-decoration: none; }
-    nav { background: #FDF6E9; box-shadow: 0 2px 12px rgba(0,0,0,0.10); position: sticky; top: 0; z-index: 1000; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 80px; }
-    .nav-logo img { height: 75px; width: auto; }
-    .nav-links { display: flex; gap: 8px; align-items: center; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 10px 20px !important; border-radius: 4px; font-weight: 700 !important; }
-    .nav-cta:hover { background: var(--gold-light) !important; }
-    .section-black { background: var(--black); color: #fff; }
-    .section-white { background: #FDF6E9; }
-    .section-gray { background: var(--gray-light); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section-pad { padding: 80px 0; }
-    .section-pad-sm { padding: 50px 0; }
-    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .section-label-dark { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 12px; }
-    h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.15; }
-    h3 { font-size: 22px; font-weight: 700; }
-    p { line-height: 1.7; font-size: 15px; }
-    .btn-gold { display: inline-block; background: var(--gold); color: var(--black); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; }
-    .btn-gold:hover { background: var(--gold-light); }
-    .btn-outline-white { display: inline-block; border: 2px solid #fff; color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 30px; border-radius: 4px; text-decoration: none; }
-    .btn-outline-white:hover { background: #FDF6E9; color: var(--black); }
-    .btn-outline-black { display: inline-block; border: 2px solid var(--black); color: var(--black); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 30px; border-radius: 4px; text-decoration: none; }
-    .btn-outline-black:hover { background: var(--black); color: #fff; }
-    .chevron-up-white { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--white); clip-path: polygon(0 0, 100% 0, 50% 100%); }
-    .chevron-up-black { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--black); clip-path: polygon(0 0, 100% 0, 50% 100%); }
-    .chevron-up-gray { width: 100%; height: 62px; margin-top: -2px; display: block; background: var(--gray-light); clip-path: polygon(0 0, 100% 0, 50% 100%); }
-    .page-hero { background: #FDF6E9; padding: 80px 0 100px; text-align: center; border-bottom: 3px solid var(--gold); }
-    .page-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: var(--text-dark); letter-spacing: -1px; }
-    .page-hero .gold { color: var(--gold); }
-    .page-hero p { color: var(--text-mid); font-size: 17px; margin-top: 16px; }
-    .breadcrumb { font-size: 12px; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    footer { background: var(--black); color: #aaa; padding: 60px 0 30px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .footer-logo img { height: 55px; margin-bottom: 16px; filter: brightness(0) invert(1); }
-    .footer-logo p { font-size: 14px; line-height: 1.6; color: #888; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 8px; }
-    .footer-col ul li a { color: #888; text-decoration: none; font-size: 14px; }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-col p { font-size: 14px; color: #888; line-height: 1.7; }
-    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding: 20px 24px 0; border-top: 1px solid #222; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #555; flex-wrap: wrap; gap: 8px; }
-    .footer-bottom a { color: var(--gold); text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Peninsula Construction | Richard Rodriguez | Santa Cruz ADU Builder</title>
+<meta name="description" content="Meet Richard Rodriguez, owner of Peninsula Construction. 30+ years experience, CSLB licensed since 1996, real estate investor and design-build specialist across the Central Coast.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--white:#ffffff;--black:#000000;--dark:#1a1a1a;--gray-text:rgb(83,83,91);--heading-color:rgb(14,17,51);--gold:#C9A84C;--gold-light:rgb(235,201,133);--gray-bg:#f5f5f5;--border:#e0e0e0;}
+  body{font-family:'Lato',sans-serif;color:var(--gray-text);background:var(--white);font-size:16px;line-height:1.7;}
+  h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;color:var(--heading-color);font-weight:700;margin-bottom:15px;}
+  h1{font-size:clamp(32px,5vw,58px);font-weight:800;line-height:1.1;}h2{font-size:clamp(24px,3vw,38px);}h3{font-size:clamp(18px,2.5vw,24px);}
+  p{margin-bottom:15px;}a{text-decoration:none;color:inherit;}img{max-width:100%;height:auto;}
+  .top-bar{background:var(--dark);color:white;text-align:center;padding:8px 20px;font-size:13px;}
+  .top-bar a{color:var(--gold-light);margin:0 10px;}
+  nav{background:var(--white);padding:0 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:85px;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;}
+  .nav-logo img { height: 78px; padding: 4px 0; }
+  .nav-links{justify-self:center;display:flex;align-items:center;gap:10px;list-style:none;}
+  .nav-links a{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:var(--heading-color);padding:8px 14px;text-transform:uppercase;letter-spacing:0.5px;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+  .nav-cta{background:var(--black);color:white!important;padding:12px 22px!important;border-radius:3px;}
+  .nav-cta:hover{background:var(--gold)!important;color:var(--black)!important;}
+  .page-hero{position:relative;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=60') center/cover;opacity:0.2;}
+  .page-hero-content{position:relative;z-index:2;max-width:700px;width:100%;padding:80px 60px;color:white;}
+  .page-hero h1{color:white;margin-bottom:15px;font-size:clamp(32px,5vw,58px);font-weight:800;}
+  .page-hero p{font-size:18px;color:#ffffff;margin-bottom:35px;max-width:550px;margin-left:auto;margin-right:auto;}
+  .breadcrumb{color:var(--gold-light);font-size:13px;margin-bottom:15px;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:1px;}
+  .section{padding:80px 60px;}.section-gray{background:var(--gray-bg);}
+  .container{max-width:1200px;margin:0 auto;}
+  .section-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block;}
+  .section-header{margin-bottom:50px;}
+  .btn-primary{background:var(--gold);color:var(--black);font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:16px 32px;border-radius:3px;transition:all 0.2s;display:inline-block;}
+  .btn-primary:hover{background:var(--black);color:white;}
+  .btn-dark{background:var(--black);color:white;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:16px 32px;border-radius:3px;transition:all 0.2s;display:inline-block;}
+  .btn-dark:hover{background:var(--gold);color:var(--black);}
+  footer{background:var(--dark);color:white;padding:60px 60px 30px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand img { height: 165px; margin-top: -45px; margin-bottom: 20px; background-color: #1a1a1a; }
+  .footer-brand p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.7;}
+  .footer-col h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold-light);margin-bottom:20px;}
+  .footer-col ul{list-style:none;}.footer-col ul li{margin-bottom:10px;}
+  .footer-col ul li a{color:rgba(255,255,255,0.6);font-size:14px;transition:color 0.2s;}
+  .footer-col ul li a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer-bottom p{color:rgba(255,255,255,0.4);font-size:13px;margin:0;}
+  .footer-bottom a{color:rgba(255,255,255,0.4);font-size:13px;}
+  @media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{position:relative;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;}.section{padding:60px 20px;}.footer-grid{grid-template-columns:1fr;}}
+  .stats-bar { background: var(--black); padding: 30px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stat { text-align: center; color: white; }
+  .stat-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: var(--gold-light); display: block; }
+  .stat-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); }
+</style>
+<style>
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-img{position:relative;}
+.about-img img{width:100%;border-radius:4px;}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:var(--black);color:white;padding:25px;border-radius:4px;text-align:center;}
+.about-badge span{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:800;color:var(--gold-light);display:block;}
+.about-badge p{font-size:13px;color:rgba(255,255,255,0.7);margin:0;text-transform:uppercase;letter-spacing:1px;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.value-card{padding:35px;background:white;border:1px solid var(--border);border-radius:4px;border-top:3px solid var(--gold);}
+.value-card h3{font-size:18px;margin-bottom:12px;}
+.value-card p{font-size:15px;color:var(--gray-text);margin:0;}
+.team-section{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;}
+.credentials-list{list-style:none;}
+.credentials-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:center;font-size:15px;}
+.credentials-list li::before{content:"✓";color:var(--gold);font-weight:700;font-size:18px;}
+@media(max-width:768px){.about-split,.values-grid,.team-section{grid-template-columns:1fr;}.about-badge{position:static;margin-top:20px;display:inline-block;}}
 </style>
 </head>
 <body>
+<div class="top-bar">📞 <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; 📧 <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp; CSLB #723364</div>
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Our Process</a></li><li><a href="our-work.html">Our Work</a></li>
+    <li><a href="about.html">About</a></li><li><a href="financing.html">Financing</a></li><li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb">Home &rsaquo; About</div>
+    <h1>30 Years. One Standard.</h1>
+    <p>Peninsula Construction was built on a simple belief — do great work, be honest, and your reputation takes care of itself.</p>
+  </div>
+</div>
 
-  <div class="top-bar"><a href="tel:8313196492">📞 (831) 319-6492</a> &nbsp;|&nbsp; CSLB #723364 &nbsp;|&nbsp; Serving Santa Cruz, Monterey & South Bay</div>
-  <nav><div class="nav-inner">
-    <a class="nav-logo" href="index.html"><img src="logo.png" alt="Peninsula Construction"></a>
-    <ul class="nav-links">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="services.html" >Services</a></li>
-      <li><a href="process.html" >Our Process</a></li>
-      <li><a href="our-work.html" >Our Work</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html" >Contact</a></li>
-      <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
-    </ul>
-  </div></nav>
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">Est.</span><span class="stat-label">1994</span></div>
+  <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Years Experience</span></div>
+  <div class="stat"><span class="stat-num">Family</span><span class="stat-label">Owned &amp; Operated</span></div>
+  <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Projects Completed</span></div>
+</div>
 
-
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> → About</div>
-      <h1>About <span class="gold">Peninsula Construction</span></h1>
-      <p>A family-built company with 30 years of trust in the community.</p>
-    </div>
-  </section>
-  <div style="background:#FDF6E9;"><div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div></div>
-
-  <section class="section-white section-pad">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px;">
-        <div>
-          <div style="background:var(--gray-light);border-radius:8px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border:2px dashed var(--gray-mid);">
-            <div style="text-align:center;color:#aaa;padding:40px;">
-              <div style="font-size:48px;margin-bottom:12px;">📸</div>
-              <div style="font-size:14px;">Photo of Richard coming soon</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="section-label-dark">OUR FOUNDER</div>
-          <h2 style="margin-bottom:20px;">Richard Rodriguez</h2>
-          <p style="color:var(--text-mid);margin-bottom:16px;">
-            [Placeholder — Richard's personal story goes here. His background, what got him into construction, his values and approach to the craft.]
-          </p>
-          <p style="color:var(--text-mid);margin-bottom:16px;">
-            [Placeholder — Story about his father and how the family business started. The legacy being built.]
-          </p>
-          <p style="color:var(--text-mid);margin-bottom:24px;">
-            What sets Richard apart isn't just 30 years of experience — it's that he's also a real estate investor himself. He's been buying and improving properties for 12+ years. When he builds your ADU, he's thinking about your ROI, not just your square footage.
-          </p>
-          <div style="display:flex;gap:24px;">
-            <div style="text-align:center;padding:20px;background:var(--gray-light);border-radius:8px;flex:1;">
-              <div style="font-size:32px;font-weight:900;color:var(--gold);">30+</div>
-              <div style="font-size:11px;color:var(--text-mid);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Years Building</div>
-            </div>
-            <div style="text-align:center;padding:20px;background:var(--gray-light);border-radius:8px;flex:1;">
-              <div style="font-size:32px;font-weight:900;color:var(--gold);">12+</div>
-              <div style="font-size:11px;color:var(--text-mid);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Years Investing</div>
-            </div>
-            <div style="text-align:center;padding:20px;background:var(--gray-light);border-radius:8px;flex:1;">
-              <div style="font-size:32px;font-weight:900;color:var(--gold);">200+</div>
-              <div style="font-size:11px;color:var(--text-mid);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Projects Done</div>
-            </div>
-          </div>
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Richard Rodriguez - Peninsula Construction">
+        <div class="about-badge"><span>30+</span><p>Years Experience</p></div>
+      </div>
+      <div>
+        <span class="section-label">Our Story</span>
+        <h2>Meet Richard Rodriguez</h2>
+        <p>Richard Rodriguez founded Peninsula Construction over 30 years ago in Watsonville, California. What started as a small general contracting operation has grown into one of the most trusted construction companies in Santa Cruz County — built entirely on referrals and repeat clients.</p>
+        <p>Richard obtained his CSLB General Building license (#723364) in 1996 and has never stopped building. Over the years, he's completed hundreds of projects across the Central Coast — from garage conversions and kitchen remodels to full ADU builds and ground-up residential development.</p>
+        <p>As a real estate investor himself for over 12 years, Richard brings a unique perspective to every ADU project: he doesn't just build your unit, he helps you understand the return on your investment.</p>
+        <div style="margin-top:30px; padding:25px; background:var(--gray-bg); border-radius:4px; border-left:3px solid var(--gold);">
+          <p style="font-style:italic; font-size:17px; color:var(--heading-color); margin:0;">"I've been building in this community for over 30 years. My reputation is everything to me. Every project gets the same care I'd give my own home."</p>
+          <p style="margin:10px 0 0; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--gold);">— Richard Rodriguez, Owner</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div style="background:var(--gray-light);"><div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div></div>
-
-  <section class="section-gray section-pad">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:50px;">
-        <div class="section-label-dark">WHAT WE STAND FOR</div>
-        <h2>Our Values</h2>
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <span class="section-label">What We Stand For</span>
+      <h2>Our Values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Honesty First</h3>
+        <p>We tell you what a project actually costs, how long it actually takes, and whether it's actually right for your situation. No overselling, no false promises.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
-        <div style="background:#fff;padding:36px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-          <div style="font-size:36px;margin-bottom:16px;">🤝</div>
-          <h3 style="margin-bottom:10px;font-size:18px;">Direct Owner Access</h3>
-          <p style="color:var(--text-mid);font-size:14px;">You deal with Richard directly — not a project manager, not a salesperson. The person who sold you the job is the person building it.</p>
+      <div class="value-card">
+        <h3>Quality That Lasts</h3>
+        <p>We build like we're going to be asked to look at it in 20 years. Because in a small community, we often are. Our work is our signature.</p>
+      </div>
+      <div class="value-card">
+        <h3>Community Roots</h3>
+        <p>We live and work in Santa Cruz County. We're not a big company from out of town — we're your neighbors, and we take that seriously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="team-section">
+      <div>
+        <span class="section-label">Credentials</span>
+        <h2>Licensed, Insured &amp; Experienced</h2>
+        <p>Peninsula Construction carries all required licenses, insurance, and certifications to protect you and your property.</p>
+        <div style="margin-top:30px;">
+          <a href="contact.html" class="btn-dark">Work With Us</a>
         </div>
-        <div style="background:#fff;padding:36px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-          <div style="font-size:36px;margin-bottom:16px;">💰</div>
-          <h3 style="margin-bottom:10px;font-size:18px;">Transparent Pricing</h3>
-          <p style="color:var(--text-mid);font-size:14px;">All-in means all-in. The price we quote covers design, permits, and construction. No surprise change orders, no hidden fees at the end.</p>
+      </div>
+      <div>
+        <ul class="credentials-list">
+          <li>CSLB License #723364 — B General Building Contractor</li>
+          <li>Licensed continuously since 1996 — 30 years</li>
+          <li>General liability insurance — fully covered</li>
+          <li>Workers compensation insurance</li>
+          <li>All permits pulled and filed with city/county</li>
+          <li>Real estate investor — 12+ years</li>
+          <li>ADU specialist — all 5 ADU types</li>
+          <li>Serving 11 cities across 4 counties</li>
+        </ul>
+        <div style="margin-top:30px; padding:20px; background:var(--gray-bg); border-radius:4px; text-align:center;">
+          <p style="margin:0; font-size:13px; color:var(--gray-text);">Verify our license at <a href="https://www.cslb.ca.gov" target="_blank" style="color:var(--gold); font-weight:600;">cslb.ca.gov</a> — License #723364</p>
         </div>
-        <div style="background:#fff;padding:36px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-          <div style="font-size:36px;margin-bottom:16px;">📈</div>
-          <h3 style="margin-bottom:10px;font-size:18px;">Investment Mindset</h3>
-          <p style="color:var(--text-mid);font-size:14px;">We don't just build what you ask for — we help you understand what will maximize your property's value. We're investors too. We get it.</p>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div style="background:#FDF6E9;"><div style="line-height:0;display:block;margin-bottom:-1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><polygon points="0,0 1440,0 720,50" fill="#FDF6E9"/></svg></div></div>
-  <section class="section-white section-pad-sm" style="text-align:center;">
-    <div class="container">
-      <h2 style="color:#fff;margin-bottom:16px;">Ready to Work With Richard?</h2>
-      <p style="color:#aaa;max-width:500px;margin:0 auto 32px;">He prefers a text or call. Free consultation, same-week property evaluation.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn-gold">Get a Free Quote</a>
-        <a href="tel:8313196492" class="btn-outline-white">📞 (831) 319-6492</a>
-      </div>
+<section style="background:var(--black);padding:80px 60px;text-align:center;">
+  <div class="container">
+    <h2 style="color:white;margin-bottom:15px;">Let's Talk About Your Project</h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:18px;margin-bottom:35px;">Richard answers his own phone. Call, text, or fill out the form — whichever you prefer.</p>
+    <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">Get a Free Estimate</a>
+      <a href="tel:8313196492" style="background:transparent;color:white;border:2px solid white;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:14px 32px;border-radius:3px;display:inline-block;">Call (831) 319-6492</a>
     </div>
-  </section>
-
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <img src="logo.png" alt="Peninsula Construction">
-        <p>30+ years building dreams across Santa Cruz, Monterey & the South Bay. ADU specialists. Design | Build | Deliver.</p>
-      </div>
-      <div class="footer-col"><h4>Pages</h4><ul>
-        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
-        <li><a href="process.html">Our Process</a></li><li><a href="our-work.html">Our Work</a></li>
-        <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Services</h4><ul>
-        <li><a href="services.html">ADU Construction</a></li><li><a href="services.html">Garage Conversions</a></li>
-        <li><a href="services.html">Room Additions</a></li><li><a href="services.html">Kitchen Remodels</a></li>
-        <li><a href="services.html">Bathroom Remodels</a></li><li><a href="services.html">New Home Builds</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Contact</h4><p>
-        <a href="tel:8313196492" style="color:#C9A84C;">(831) 319-6492</a><br><br>
-        1185 San Andreas Rd<br>Watsonville, CA 95076<br><br>CSLB #723364<br>Licensed Since 1996
-      </p></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Peninsula Construction. All rights reserved.</span>
-      <span>Website by <a href="https://emberseo.ai" target="_blank">Ember SEO</a></span>
-    </div>
-  </footer>
-
+  </div>
+</section>
+<footer><div class="container"><div class="footer-grid">
+  <div class="footer-brand"><img src="download (2).jpg" alt="Peninsula Construction Logo" style="height: 165px; width: auto;"><p>30+ years of design-build excellence across the Central Coast.</p><p style="margin-top:15px;color:rgba(255,255,255,0.4);font-size:13px;">CSLB #723364 | Licensed Since 1996</p></div>
+  <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="process.html">Our Process</a></li><li><a href="our-work.html">Our Work</a></li><li><a href="about.html">About</a></li><li><a href="financing.html">Financing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">ADU Construction</a></li><li><a href="services.html">Garage Conversions</a></li><li><a href="services.html">Room Additions</a></li><li><a href="services.html">Kitchen Remodels</a></li><li><a href="services.html">New Home Builds</a></li></ul></div>
+  <div class="footer-col"><h4>Cities</h4><ul><li><a href="city-pages/watsonville.html">Watsonville</a></li><li><a href="city-pages/santa-cruz.html">Santa Cruz</a></li><li><a href="city-pages/monterey.html">Monterey</a></li><li><a href="city-pages/capitola.html">Capitola</a></li><li><a href="city-pages/gilroy.html">Gilroy</a></li></ul></div>
+<div class="footer-col footer-cities"><h4>Cities We Serve</h4><ul><li><a href="city-pages/santa-cruz.html">Santa Cruz</a></li><li><a href="city-pages/scotts-valley.html">Scotts Valley</a></li><li><a href="city-pages/capitola.html">Capitola</a></li><li><a href="city-pages/aptos.html">Aptos</a></li><li><a href="city-pages/watsonville.html">Watsonville</a></li><li><a href="city-pages/soquel.html">Soquel</a></li><li><a href="city-pages/santa-cruz-county.html">Santa Cruz County</a></li><li><a href="city-pages/monterey.html">Monterey</a></li><li><a href="city-pages/pacific-grove.html">Pacific Grove</a></li><li><a href="city-pages/carmel.html">Carmel</a></li><li><a href="city-pages/seaside.html">Seaside</a></li><li><a href="city-pages/salinas.html">Salinas</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Peninsula Construction. All rights reserved.</p><p>Designed by <a href="https://emberseo.ai">Ember SEO</a></p></div></div></footer>
 </body>
 </html>
