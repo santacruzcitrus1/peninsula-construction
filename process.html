@@ -69,14 +69,17 @@
 .process-detail { background: var(--gray-bg); border-left: 3px solid var(--gold); padding: 15px 20px; border-radius: 0 4px 4px 0; font-size: 14px; color: var(--gray-text); }
 .timeline-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .guarantee-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
-.guarantee-card { background: white; border: 1px solid var(--border); border-radius: 4px; padding: 35px; text-align: center; }
-.guarantee-icon { font-size: 40px; margin-bottom: 15px; display: block; }
-.guarantee-card h3 { font-size: 18px; margin-bottom: 10px; }
+.guarantee-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--gold-light); border-radius: 8px; padding: 40px 35px; text-align: center; transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+.guarantee-card:hover { box-shadow: 0 0 18px 3px rgba(235,201,133,0.45); border-color: #f5d98a; }
+.guarantee-card h3 { font-size: 20px; color: var(--gold-light); margin-bottom: 12px; }
+.guarantee-card p { font-size: 15px; color: rgba(255,255,255,0.85); margin: 0; line-height: 1.7; }
 @media (max-width: 768px) { .timeline-split { grid-template-columns: 1fr; } .guarantee-grid { grid-template-columns: 1fr; } .process-item { grid-template-columns: 60px 1fr; gap: 20px; } }
 </style>
 </head>
 <body>
-<div class="top-bar">📞 <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; 📧 <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp; CSLB #723364</div>
+<div class="top-bar">📞 <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; 📧 <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp;
+  <a href="https://www.instagram.com/peninsulaconstructionca/?hl=en" target="_blank" style="display:inline-flex;align-items:center;gap:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@peninsulaconstructionca</a> &nbsp;|&nbsp;
+  CSLB #723364</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
   <ul class="nav-links">
@@ -86,6 +89,7 @@
     <li><a href="our-work.html">Our Work</a></li>
     <li><a href="about.html">About</a></li><li><a href="financing.html">Financing</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
   </ul>
 </nav>
@@ -173,25 +177,22 @@
   </div>
 </section>
 
-<section class="section section-gray">
+<section class="section section-dark">
   <div class="container">
     <div class="section-header" style="text-align:center;">
-      <span class="section-label">Our Commitments</span>
-      <h2>What We Guarantee</h2>
+      <span class="section-label" style="color:var(--gold-light);">Our Commitments</span>
+      <h2 style="color:white;">What We Guarantee</h2>
     </div>
     <div class="guarantee-grid">
       <div class="guarantee-card">
-        <span class="guarantee-icon">💰</span>
         <h3>Transparent Pricing</h3>
         <p>We give you a detailed written estimate upfront. No hidden fees, no surprise change orders. What we quote is what you pay.</p>
       </div>
       <div class="guarantee-card">
-        <span class="guarantee-icon">📅</span>
-        <h3>On-Time Completion</h3>
-        <p>30 years of experience means we know how to schedule a project and hit our dates. We'll give you a realistic timeline — and stick to it.</p>
+        <h3>Honest, Upfront Communication</h3>
+        <p>We give you a realistic timeline from day one and keep you informed every step of the way. No surprises, no runaround — just straight answers about where your project stands.</p>
       </div>
       <div class="guarantee-card">
-        <span class="guarantee-icon">📞</span>
         <h3>Direct Communication</h3>
         <p>You have Richard's direct number. Text him on a Sunday if you need to. No customer service queues, no being passed around.</p>
       </div>
@@ -237,7 +238,8 @@
     <div class="footer-col footer-cities"><h4>Cities We Serve</h4><ul><li><a href="city-pages/santa-cruz.html">Santa Cruz</a></li><li><a href="city-pages/scotts-valley.html">Scotts Valley</a></li><li><a href="city-pages/capitola.html">Capitola</a></li><li><a href="city-pages/aptos.html">Aptos</a></li><li><a href="city-pages/watsonville.html">Watsonville</a></li><li><a href="city-pages/soquel.html">Soquel</a></li><li><a href="city-pages/santa-cruz-county.html">Santa Cruz County</a></li><li><a href="city-pages/monterey.html">Monterey</a></li><li><a href="city-pages/pacific-grove.html">Pacific Grove</a></li><li><a href="city-pages/carmel.html">Carmel</a></li><li><a href="city-pages/seaside.html">Seaside</a></li><li><a href="city-pages/salinas.html">Salinas</a></li></ul></div></div>
     <div class="footer-bottom">
       <p>&copy; 2026 Peninsula Construction. All rights reserved.</p>
-      <p>Designed by <a href="https://emberseo.ai">Ember SEO</a></p>
+      <a href="https://www.instagram.com/peninsulaconstructionca/?hl=en" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold-light);font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gold-light)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+      <p>Designed by <a href="https://emberseo.ai" style="color:var(--gold-light);">Ember SEO</a></p>
     </div>
   </div>
 </footer>
