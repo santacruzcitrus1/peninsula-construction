@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,6 +21,7 @@
     --border: #e0e0e0;
   }
 
+  html, body { overflow-x: clip; max-width: 100%; }
   body { font-family: 'Lato', sans-serif; color: var(--gray-text); background: var(--white); font-size: 16px; line-height: 1.7; }
   h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--heading-color); font-weight: 700; margin-bottom: 15px; }
   h1 { font-size: clamp(32px,5vw,58px); font-weight: 800; line-height: 1.1; }
@@ -192,22 +193,55 @@
   .split-section.reverse .split-content { order: 1; }
 
   /* MOBILE */
+
+  /* HAMBURGER */
+  .hamburger { background: none; border: none; outline: none; box-shadow: none; -webkit-appearance: none; appearance: none; display: none; cursor: pointer; padding: 4px; z-index: 1100; flex-shrink: 0; align-self: center; font-size: 34px !important; line-height: 1; color: #0e1133; font-family: inherit; }
+  .hamburger.open { color: var(--gold); }
+
+  /* MOBILE DROPDOWN */
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    .hero-content { padding: 60px 20px; }
-    .stats-bar { grid-template-columns: repeat(2,1fr); padding: 30px 20px; }
-    .section { padding: 60px 20px; }
-    .diff-grid, .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
+    /* TOP BAR — stack items on mobile */
+    .top-bar { font-size: 11px; padding: 6px 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; }
+    .top-bar a { margin: 0 4px; }
+    /* NAV */
+    .hamburger { display: block; }
+    nav { padding: 0 20px; position: sticky; top: 0; z-index: 1000; grid-template-columns: auto auto; justify-content: space-between; }
+    .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
+    .nav-links.open { display: flex; }
+    .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
+    .nav-links li:last-child a { border-bottom: none; margin: 10px 16px; text-align: center; }
+    /* HERO */
+    .hero { min-height: 480px; }
+    .hero-content { padding: 50px 20px; }
+    /* STATS */
+    .stats-bar { grid-template-columns: repeat(2,1fr) !important; padding: 30px 20px !important; background: #000000 !important; }
+    /* SECTIONS */
+    .section { padding: 50px 20px; }
+    .cta-section { padding: 50px 20px; }
+    /* GRIDS — all single column */
+    .diff-grid { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; }
+    .diff-card { height: 320px; }
+    .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
     .cities-grid { grid-template-columns: repeat(2,1fr); }
+    /* FAQ inline grid fix */
+    div[style*="grid-template-columns:1fr 1fr"] { display: block !important; }
+    /* FOOTER */
     .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    /* FORMS */
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
+    /* SPLIT SECTIONS */
     .split-section { grid-template-columns: 1fr; }
     .split-section.reverse .split-image { order: 0; }
     .split-section.reverse .split-content { order: 0; }
-    .cta-section { padding: 60px 20px; }
+    /* PREVENT OVERFLOW */
+    * { max-width: 100%; }
+    img { max-width: 100%; height: auto; }
+    table { width: 100%; }
+    pre, code { overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
   }
+
 </style>
 </head>
 <body>
@@ -225,7 +259,8 @@
   <div class="nav-logo">
     <a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a>
   </div>
-  <ul class="nav-links">
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="process.html">Our Process</a></li>
@@ -602,5 +637,21 @@
   </div>
 </footer>
 
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  // Close menu when a link is tapped
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>

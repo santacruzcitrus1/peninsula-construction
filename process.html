@@ -52,17 +52,55 @@
   .footer-col ul li a:hover { color: var(--gold-light); }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; margin: 0; }
-  .footer-bottom a { color: rgba(255,255,255,0.4); font-size: 13px; }
-  @media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-hero { min-height: 680px; display: flex; align-items: center; justify-content: center; overflow: hidden; } .section { padding: 60px 20px; } .footer-grid { grid-template-columns: 1fr; } }
+  .footer-bottom a { color: rgba(255,255,255,0.4); font-size: 13px; } .nav-links { display: none; } .page-hero { min-height: 680px; display: flex; align-items: center; justify-content: center; overflow: hidden; } .section { padding: 60px 20px; } .footer-grid { grid-template-columns: 1fr; } }
   .stats-bar { background: var(--black); padding: 30px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .stat { text-align: center; color: white; }
   .stat-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: var(--gold-light); display: block; }
   .stat-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); }
+
+  /* HAMBURGER */
+  .hamburger { background: none; border: none; outline: none; box-shadow: none; -webkit-appearance: none; appearance: none; display: none; cursor: pointer; padding: 4px; z-index: 1100; flex-shrink: 0; align-self: center; font-size: 34px !important; line-height: 1; color: #0e1133; font-family: inherit; }
+  .hamburger.open { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .top-bar { font-size: 11px; padding: 6px 10px; }
+    .top-bar a { margin: 0 4px; }
+    .hamburger { display: block; }
+    nav { padding: 0 20px; grid-template-columns: auto auto; justify-content: space-between; }
+    .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
+    .nav-links.open { display: flex; }
+    .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
+    .nav-links li:last-child a { border-bottom: none; margin: 10px 16px; text-align: center; }
+    .hero { min-height: 420px; }
+    .hero-content { padding: 60px 20px; }
+    .stats-bar { grid-template-columns: repeat(2,1fr) !important; padding: 30px 20px !important; background: #000000 !important; }
+    .section { padding: 60px 20px; }
+    .diff-grid, .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
+    .diff-grid { gap: 20px; padding: 0 10px; }
+    .diff-card { height: 350px; }
+    .cities-grid { grid-template-columns: repeat(2,1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .split-section { grid-template-columns: 1fr; }
+    .split-section.reverse .split-image { order: 0; }
+    .split-section.reverse .split-content { order: 0; }
+    .cta-section { padding: 60px 20px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .service-blocks .service-block { grid-template-columns: 1fr; }
+    .service-block-image { width: 100% !important; }
+    .guarantee-cards, .value-cards, .finance-cards, .process-steps { grid-template-columns: 1fr; }
+    .area-tags { grid-template-columns: repeat(2,1fr); }
+    img { max-width: 100%; height: auto; }
+    * { max-width: 100%; box-sizing: border-box; }
+  }
+
 </style>
 <style>
 .process-timeline { position: relative; padding: 20px 0; }
 .process-item { display: grid; grid-template-columns: 80px 1fr; gap: 30px; margin-bottom: 50px; align-items: start; }
-.process-num { width: 70px; height: 70px; background: var(--black); color: var(--gold-light); font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.process-num { width: 70px; height: 70px; background: var(--black); color: var(--gold-light); font-family: 'Montserrat', sans-serif; font-size: 34px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .process-content { padding-top: 10px; }
 .process-content h3 { margin-bottom: 10px; }
 .process-content p { color: var(--gray-text); margin-bottom: 10px; }
@@ -72,8 +110,7 @@
 .guarantee-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--gold-light); border-radius: 8px; padding: 40px 35px; text-align: center; transition: box-shadow 0.3s ease, border-color 0.3s ease; }
 .guarantee-card:hover { box-shadow: 0 0 18px 3px rgba(235,201,133,0.45); border-color: #f5d98a; }
 .guarantee-card h3 { font-size: 20px; color: var(--gold-light); margin-bottom: 12px; }
-.guarantee-card p { font-size: 15px; color: rgba(255,255,255,0.85); margin: 0; line-height: 1.7; }
-@media (max-width: 768px) { .timeline-split { grid-template-columns: 1fr; } .guarantee-grid { grid-template-columns: 1fr; } .process-item { grid-template-columns: 60px 1fr; gap: 20px; } }
+.guarantee-card p { font-size: 15px; color: rgba(255,255,255,0.85); margin: 0; line-height: 1.7; } .guarantee-grid { grid-template-columns: 1fr; } .process-item { grid-template-columns: 60px 1fr; gap: 20px; } }
 </style>
 </head>
 <body>
@@ -82,7 +119,8 @@
   CSLB #723364</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
-  <ul class="nav-links">
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="process.html">Our Process</a></li>
@@ -243,5 +281,21 @@
     </div>
   </div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

@@ -85,8 +85,6 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; margin: 0; }
   .footer-bottom a { color: rgba(255,255,255,0.4); font-size: 13px; }
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
     .nav-links { display: none; }
     .page-hero { padding: 60px 20px; }
     .section { padding: 60px 20px; }
@@ -96,6 +94,45 @@
     .footer-grid { grid-template-columns: 1fr; }
     .cta-section { padding: 60px 20px; }
   }
+
+  /* HAMBURGER */
+  .hamburger { background: none; border: none; outline: none; box-shadow: none; -webkit-appearance: none; appearance: none; display: none; cursor: pointer; padding: 4px; z-index: 1100; flex-shrink: 0; align-self: center; font-size: 34px !important; line-height: 1; color: #0e1133; font-family: inherit; }
+  .hamburger.open { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .top-bar { font-size: 11px; padding: 6px 10px; }
+    .top-bar a { margin: 0 4px; }
+    .hamburger { display: block; }
+    nav { padding: 0 20px; grid-template-columns: auto auto; justify-content: space-between; }
+    .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
+    .nav-links.open { display: flex; }
+    .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
+    .nav-links li:last-child a { border-bottom: none; margin: 10px 16px; text-align: center; }
+    .hero { min-height: 420px; }
+    .hero-content { padding: 60px 20px; }
+    .stats-bar { grid-template-columns: repeat(2,1fr) !important; padding: 30px 20px !important; background: #000000 !important; }
+    .section { padding: 60px 20px; }
+    .diff-grid, .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
+    .diff-grid { gap: 20px; padding: 0 10px; }
+    .diff-card { height: 350px; }
+    .cities-grid { grid-template-columns: repeat(2,1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .split-section { grid-template-columns: 1fr; }
+    .split-section.reverse .split-image { order: 0; }
+    .split-section.reverse .split-content { order: 0; }
+    .cta-section { padding: 60px 20px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .service-blocks .service-block { grid-template-columns: 1fr; }
+    .service-block-image { width: 100% !important; }
+    .guarantee-cards, .value-cards, .finance-cards, .process-steps { grid-template-columns: 1fr; }
+    .area-tags { grid-template-columns: repeat(2,1fr); }
+    img { max-width: 100%; height: auto; }
+    * { max-width: 100%; box-sizing: border-box; }
+  }
+
 </style>
 </head>
 <body>
@@ -104,7 +141,8 @@
   CSLB #723364</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
-  <ul class="nav-links">
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html" class="active">Services</a></li>
     <li><a href="process.html">Our Process</a></li>
@@ -280,5 +318,21 @@
     </div>
   </div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>
