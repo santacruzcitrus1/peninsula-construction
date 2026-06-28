@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: clip; max-width: 100%; }
   :root { --white: #ffffff; --black: #000000; --dark: #1a1a1a; --gray-text: rgb(83,83,91); --heading-color: rgb(14,17,51); --gold: #C9A84C; --gold-light: rgb(235,201,133); --gray-bg: #f5f5f5; --border: #e0e0e0; }
   body { font-family: 'Lato', sans-serif; color: var(--gray-text); background: var(--white); font-size: 16px; line-height: 1.7; }
   h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--heading-color); font-weight: 700; margin-bottom: 15px; }
@@ -50,11 +51,11 @@
   .services-intro { text-align: center; margin-bottom: 60px; }
   .services-intro h2 { font-size: clamp(28px,3.5vw,42px); margin-bottom: 15px; }
   .services-intro p { font-size: 18px; color: var(--gray-text); max-width: 650px; margin: 0 auto; }
-  .service-block { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; margin-bottom: 80px; padding: 0; }
-  .service-block.reverse { grid-template-columns: 1fr 1.5fr; }
+  .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; margin-bottom: 80px; padding: 0; max-width: 1500px; margin-left: auto; margin-right: auto; }
+  .service-block.reverse { grid-template-columns: 1fr 1fr; }
   .service-block.reverse .service-img { order: 2; justify-self: end; }
   .service-block.reverse .service-body { order: 1; }
-  .service-img { width: 85%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.15); transition: box-shadow 0.3s, transform 0.3s; }
+  .service-img { width: 85%; max-width: 600px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.15); transition: box-shadow 0.3s, transform 0.3s; }
   .service-img:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.22); transform: translateY(-4px); }
   .service-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
   .service-img:hover img { transform: scale(1.04); }
@@ -65,7 +66,7 @@
   .service-body p { color: var(--gray-text); margin-bottom: 20px; }
   .service-features { list-style: none; margin-bottom: 30px; }
   .service-features li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--gray-text); display: flex; align-items: center; gap: 10px; }
-  .service-features li::before { content: "✓"; color: var(--gold); font-weight: 700; font-size: 16px; }
+  .service-features li::before { content: "?"; color: var(--gold); font-weight: 700; font-size: 16px; }
   .stats-bar { background: var(--black); padding: 30px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .stat { text-align: center; color: white; }
   .stat-num { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: var(--gold-light); display: block; }
@@ -85,7 +86,7 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 13px; margin: 0; }
   .footer-bottom a { color: rgba(255,255,255,0.4); font-size: 13px; }
-    .nav-links { display: none; }
+  @media (max-width: 768px) {
     .page-hero { padding: 60px 20px; }
     .section { padding: 60px 20px; }
     .service-block { grid-template-columns: 1fr; min-height: auto; }
@@ -104,7 +105,7 @@
     .top-bar { font-size: 11px; padding: 6px 10px; }
     .top-bar a { margin: 0 4px; }
     .hamburger { display: block; }
-    nav { padding: 0 20px; grid-template-columns: auto auto; justify-content: space-between; }
+    nav { padding: 0 20px; grid-template-columns: auto 1fr auto; justify-content: space-between; }
     .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
     .nav-links.open { display: flex; }
     .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
@@ -136,12 +137,11 @@
 </style>
 </head>
 <body>
-<div class="top-bar">📞 <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; 📧 <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp;
+<div class="top-bar">?? <a href="tel:8313196492">(831) 319-6492</a> &nbsp;|&nbsp; ?? <a href="mailto:richrod@peninsula.construction">richrod@peninsula.construction</a> &nbsp;|&nbsp;
   <a href="https://www.instagram.com/peninsulaconstructionca/?hl=en" target="_blank" style="display:inline-flex;align-items:center;gap:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@peninsulaconstructionca</a> &nbsp;|&nbsp;
   CSLB #723364</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
-  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html" class="active">Services</a></li>
@@ -152,18 +152,19 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
   </ul>
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
 </nav>
 <div class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <span class="hero-badge" style="display:inline-block;background:var(--gold);color:var(--black);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 16px;margin-bottom:20px;border-radius:2px;">Design-Build Specialists — Central Coast California</span>
+    <span class="hero-badge" style="display:inline-block;background:var(--gold);color:var(--black);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 16px;margin-bottom:20px;border-radius:2px;">Design-Build Specialists � Central Coast California</span>
     <h1>Our Construction Services</h1>
-    <p>From ADUs to full home builds — Peninsula Construction is your full-process design-build contractor across the Central Coast.</p>
+    <p>From ADUs to full home builds � Peninsula Construction is your full-process design-build contractor across the Central Coast.</p>
   </div>
 </div>
 
-<div class="stats-bar">
+<div class="stats-bar" style="background:#000000 !important;">
   <div class="stat"><span class="stat-num">8</span><span class="stat-label">Services Offered</span></div>
   <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Years Experience</span></div>
   <div class="stat"><span class="stat-num">Licensed</span><span class="stat-label">&amp; Insured</span></div>
@@ -175,7 +176,7 @@
   <div class="services-intro">
     <span class="section-label">What We Build</span>
     <h2>Full-Service Construction, Start to Finish</h2>
-    <p>Whether you're starting from scratch or picking up where someone else left off — Peninsula Construction has the experience to get it done right.</p>
+    <p>Whether you're starting from scratch or picking up where someone else left off � Peninsula Construction has the experience to get it done right.</p>
   </div>
 </div>
 
@@ -185,7 +186,7 @@
   <div class="service-body">
     <span class="section-label">Most Popular</span>
     <h2>ADU Construction</h2>
-    <p>Accessory Dwelling Units are the fastest-growing segment of residential construction in California. Peninsula Construction specializes in every type of ADU — from detached cottages to two-story units.</p>
+    <p>Accessory Dwelling Units are the fastest-growing segment of residential construction in California. Peninsula Construction specializes in every type of ADU � from detached cottages to two-story units.</p>
     <ul class="service-features">
       <li>Detached &amp; attached ADUs</li>
       <li>Two-story ADUs up to 1,200 sq ft</li>
@@ -204,14 +205,14 @@
   <div class="service-body">
     <span class="section-label">High ROI</span>
     <h2>Garage Conversions</h2>
-    <p>Converting an existing garage into a livable ADU is often the most affordable path to adding rental income or housing for family. We handle the entire conversion — insulation, electrical, plumbing, finishes, and permits.</p>
+    <p>Converting an existing garage into a livable ADU is often the most affordable path to adding rental income or housing for family. We handle the entire conversion � insulation, electrical, plumbing, finishes, and permits.</p>
     <ul class="service-features">
       <li>Full structural assessment included</li>
       <li>Plumbing &amp; electrical upgrades</li>
       <li>City permit processing</li>
       <li>Insulation &amp; HVAC</li>
       <li>Kitchen &amp; bathroom installation</li>
-      <li>Typical cost: $80K–$150K all-in</li>
+      <li>Typical cost: $80K�$150K all-in</li>
     </ul>
     <div style="display:flex;gap:16px;flex-wrap:wrap;"><a href="contact.html" class="btn-dark">Discuss Your Garage Conversion</a><a href="services/garage-detail.html" class="btn-primary">Find Out More</a></div>
   </div>
@@ -277,7 +278,7 @@
 <section class="cta-section">
   <div class="container">
     <h2>Not Sure Which Service You Need?</h2>
-    <p>Call or text Richard directly — he'll give you honest advice with no pressure to buy.</p>
+    <p>Call or text Richard directly � he'll give you honest advice with no pressure to buy.</p>
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
       <a href="contact.html" class="btn-primary">Schedule a Free Consultation</a>
       <a href="tel:8313196492" style="background:transparent; color:white; border:2px solid white; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:14px 32px; border-radius:3px; transition:all 0.2s; display:inline-block;">Call (831) 319-6492</a>

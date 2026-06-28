@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{overflow-x:clip;max-width:100%;}
   :root{--white:#ffffff;--black:#000000;--dark:#1a1a1a;--gray-text:rgb(83,83,91);--heading-color:rgb(14,17,51);--gold:#C9A84C;--gold-light:rgb(235,201,133);--gray-bg:#f5f5f5;--border:#e0e0e0;}
   body{font-family:'Lato',sans-serif;color:var(--gray-text);background:var(--white);font-size:16px;line-height:1.7;}
   h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;color:var(--heading-color);font-weight:700;margin-bottom:15px;}
@@ -39,8 +40,9 @@
   .footer-col ul li a{color:rgba(255,255,255,0.6);font-size:14px;transition:color 0.2s;}
   .footer-col ul li a:hover{color:var(--gold-light);}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-  .footer-bottom p{color:rgba(255,255,255,0.4);font-size:13px;margin:0;}.footer-bottom a{color:rgba(255,255,255,0.4);font-size:13px;}.page-hero{padding:60px 20px;}.section{padding:60px 20px;}.footer-grid{grid-template-columns:1fr;}}
+  .footer-bottom p{color:rgba(255,255,255,0.4);font-size:13px;margin:0;}.footer-bottom a{color:rgba(255,255,255,0.4);font-size:13px;}.page-hero{padding:60px 20px;}.section{padding:60px 20px;}.footer-grid{grid-template-columns:1fr;}
 
+  .nav-links { display: flex; align-items: center; justify-content: center; gap: 10px; list-style: none; }
   /* HAMBURGER */
   .hamburger { background: none; border: none; outline: none; box-shadow: none; -webkit-appearance: none; appearance: none; display: none; cursor: pointer; padding: 4px; z-index: 1100; flex-shrink: 0; align-self: center; font-size: 34px !important; line-height: 1; color: #0e1133; font-family: inherit; }
   .hamburger.open { color: var(--gold); }
@@ -50,7 +52,7 @@
     .top-bar { font-size: 11px; padding: 6px 10px; }
     .top-bar a { margin: 0 4px; }
     .hamburger { display: block; }
-    nav { padding: 0 20px; grid-template-columns: auto auto; justify-content: space-between; }
+    nav { padding: 0 20px; grid-template-columns: auto 1fr auto; justify-content: space-between; }
     .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
     .nav-links.open { display: flex; }
     .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
@@ -102,7 +104,6 @@
   CSLB #723364</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="Use this logo.png" alt="Peninsula Construction"></a></div>
-  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
     <li><a href="process.html">Our Process</a></li><li><a href="our-work.html">Our Work</a></li>
@@ -110,6 +111,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get a Free Quote</a></li>
   </ul>
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle navigation" style="font-size:40px !important;line-height:1;">&#9776;</div>
 </nav>
 <div class="page-hero">
   <div class="page-hero-content">

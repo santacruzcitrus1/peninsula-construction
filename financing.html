@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: clip; max-width: 100%; }
   :root {
     --white: #ffffff;
     --black: #000000;
@@ -121,7 +122,7 @@
     .nav-links li:last-child a { border-bottom: none; margin: 10px 16px; text-align: center; }
     .hero { min-height: 420px; }
     .hero-content { padding: 60px 20px; }
-    .stats-bar { grid-template-columns: repeat(2,1fr) !important; padding: 30px 20px !important; background: #000000 !important; }
+    .stats-bar { max-width: none !important; grid-template-columns: repeat(2,1fr) !important; padding: 30px 20px !important; background: #000000 !important; }
     .section { padding: 60px 20px; }
     .diff-grid, .services-grid, .projects-grid, .testimonials-grid, .process-grid { grid-template-columns: 1fr; }
     .diff-grid { gap: 20px; padding: 0 10px; }
@@ -180,7 +181,7 @@
   </div>
 </section>
 
-<div class="stats-bar">
+<div class="stats-bar" style="background:#000000;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 60px;">
   <div class="stat"><span class="stat-num">Flexible</span><span class="stat-label">Financing Options</span></div>
   <div class="stat"><span class="stat-num">Multiple</span><span class="stat-label">Lenders Available</span></div>
   <div class="stat"><span class="stat-num">Fast</span><span class="stat-label">Approvals</span></div>
