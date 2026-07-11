@@ -239,10 +239,15 @@
     .split-section.reverse .split-image { order: 0; }
     .split-section.reverse .split-content { order: 0; }
     /* PREVENT OVERFLOW */
-    * { max-width: 100%; }
+    * { max-width: 100%; box-sizing: border-box; }
     img { max-width: 100%; height: auto; }
+    body { overflow-x: hidden; }
+    .diff-grid { grid-template-columns: 1fr !important; gap: 16px; padding: 0; }
+    .diff-card { height: 280px; width: 100%; }
+    .diff-card-overlay { width: calc(100% - 24px); }
     table { width: 100%; }
     pre, code { overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+    section, .section, .container { overflow-x: hidden; }
   }
 
 </style>
@@ -286,7 +291,7 @@
     <p>30+ years of construction excellence. Full-process from permits to completion. Serving Watsonville, Santa Cruz, Monterey &amp; beyond.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">Get a Free Estimate</a>
-      <a href="our-work.html" class="btn-outline">View Our Work</a>
+      <a href="adu-cost.html" class="btn-outline">ADU Cost Guide</a>
     </div>
   </div>
 </section>
@@ -310,7 +315,7 @@
     <div class="section-header">
       <span class="section-label" style="font-size: 18px; letter-spacing: 4px;">Why Choose Us</span>
       <h2>The Peninsula Construction Difference</h2>
-      <p>We don't just build structures — we build long-term value into your property. Here's what sets us apart.</p>
+      <p>Already have blueprints or want to go with your city's pre-approved plans? Now it's time to pick the right contractor. We can jump in and get your ADU investment done. Ask about our finance options.</p>
     </div>
   </div>
 </div>
@@ -334,13 +339,13 @@
         <img src="webp/Garage Conversion 1.webp" alt="30 Years of Experience" style="object-position: center;" loading="lazy" width="1500" height="1000">
         <div class="diff-card-overlay">
           <h3>30 Years of Experience</h3>
-          <p>Licensed since 1996, Richard Rodriguez has built hundreds of projects across Santa Cruz County. You get decades of expertise on every job.</p>
+          <p style="color:#ffffff;text-shadow:0 2px 8px rgba(0,0,0,0.9);">Licensed since 1996, Richard Rodriguez has built hundreds of projects across Santa Cruz County. You get decades of expertise on every job.</p>
         </div>
       </div>
       <div class="diff-card">
         <img src="webp/Kitchen 1.webp" alt="Direct Owner Access" style="object-position: center;" loading="lazy" width="600" height="300">
-        <div class="diff-card-overlay">
-          <h3>Direct Owner Access</h3>
+        <div class="diff-card-overlay" style="background:rgba(0,0,0,0.55);">
+          <h3 style="color:#EBC985;">Direct Owner Access</h3>
           <p>You work directly with Richard — not a sales team or project manager. Transparent pricing, honest timelines, no surprises.</p>
         </div>
       </div>
