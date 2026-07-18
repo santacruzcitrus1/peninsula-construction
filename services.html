@@ -90,7 +90,9 @@
     .page-hero { padding: 60px 20px; }
     .section { padding: 60px 20px; }
     .service-block { grid-template-columns: 1fr; min-height: auto; }
-    .service-block.reverse .service-img, .service-block.reverse .service-body { order: 0; }
+    .service-block.reverse { grid-template-columns: 1fr; }
+    .service-block.reverse .service-img { order: -1; }
+    .service-block.reverse .service-body { order: 1; }
     .service-body { padding: 40px 20px; }
     .footer-grid { grid-template-columns: 1fr; }
     .cta-section { padding: 60px 20px; }
@@ -105,7 +107,7 @@
     .top-bar { font-size: 11px; padding: 6px 10px; }
     .top-bar a { margin: 0 4px; }
     .hamburger { display: block; }
-    nav { padding: 0 20px; grid-template-columns: auto 1fr auto; justify-content: space-between; }
+    nav { padding: 0 20px; grid-template-columns: auto auto; justify-content: space-between; }
     .nav-links { display: none; position: absolute; top: 85px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 10px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.12); z-index: 1050; list-style: none; }
     .nav-links.open { display: flex; }
     .nav-links li a { padding: 14px 24px; border-bottom: 1px solid #f0f0f0; font-size: 14px; display: block; }
@@ -122,8 +124,8 @@
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .split-section { grid-template-columns: 1fr; }
-    .split-section.reverse .split-image { order: 0; }
-    .split-section.reverse .split-content { order: 0; }
+    .split-section.reverse .split-image { order: -1; }
+    .split-section.reverse .split-content { order: 1; }
     .cta-section { padding: 60px 20px; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     .service-blocks .service-block { grid-template-columns: 1fr; }
@@ -201,7 +203,7 @@
 
 <!-- GARAGE CONVERSION -->
 <div class="service-block reverse">
-  <div class="service-img"><img src="garage conversion 2.jpg" alt="Garage Conversion ADU"></div>
+  <div class="service-img"><img src="Garage Conversion 2.jpg" alt="Garage Conversion ADU"></div>
   <div class="service-body">
     <span class="section-label">High ROI</span>
     <h2>Garage Conversions</h2>
