@@ -174,7 +174,7 @@
   .license-badge p { margin: 0; font-size: 15px; font-weight: 600; color: var(--heading-color); }
 
   /* FOOTER */
-  footer { background: var(--dark); color: white; padding: 60px 60px 30px; position: relative; z-index: 1; }
+  footer { background: var(--dark); color: white; padding: 60px 60px 30px; position: relative; z-index: 10; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
   .footer-brand img { height: 165px; margin-top: -45px; margin-bottom: 20px; background-color: #1a1a1a; }
   .footer-brand p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
@@ -231,6 +231,9 @@
     /* FOOTER */
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    footer { position: relative !important; z-index: 100 !important; padding-top: 40px; }
+    .footer-brand img { margin-top: 0 !important; }
+    .footer-brand { position: relative; z-index: 101; }
     /* FORMS */
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -575,8 +578,6 @@
   </div>
 </section>
 
-</main>
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -664,5 +665,6 @@
     });
   });
 </script>
+</main>
 </body>
 </html>
