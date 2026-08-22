@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peninsula Construction — Site Audit Report</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; background: #f5f5f0; color: #1a1a1a; }
+  .header { background: #1a1a1a; color: white; padding: 60px 40px; text-align: center; }
+  .header .logo { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #c9a84c; margin-bottom: 16px; }
+  .header h1 { font-size: 42px; font-weight: 400; margin-bottom: 8px; }
+  .header .subtitle { font-size: 16px; color: #aaa; }
+  .header .date { font-size: 13px; color: #c9a84c; margin-top: 12px; letter-spacing: 2px; text-transform: uppercase; }
+  .container { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+  .section { margin-bottom: 50px; }
+  .section-title { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #c9a84c; margin-bottom: 24px; border-bottom: 1px solid #e0e0d8; padding-bottom: 12px; }
+  .score-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .score-block { background: white; border-radius: 8px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .score-block h3 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; color: #1a1a1a; }
+  .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0f0eb; }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-name { font-size: 14px; color: #444; }
+  .metric-score { font-size: 18px; font-weight: 700; }
+  .completed-list { list-style: none; }
+  .completed-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f0f0eb; font-size: 15px; line-height: 1.5; }
+  .completed-list li:last-child { border-bottom: none; }
+  .check { color: #22a06b; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .pending-list { list-style: none; }
+  .pending-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f0f0eb; font-size: 15px; line-height: 1.5; }
+  .pending-list li:last-child { border-bottom: none; }
+  .dot { color: #c9a84c; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .highlight-box { background: #1a1a1a; color: white; border-radius: 8px; padding: 36px; text-align: center; }
+  .highlight-box h3 { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #c9a84c; margin-bottom: 16px; }
+  .highlight-box p { font-size: 17px; line-height: 1.7; color: #ccc; }
+  .highlight-box strong { color: white; }
+  .footer-note { text-align: center; padding: 40px; color: #999; font-size: 13px; border-top: 1px solid #e0e0d8; margin-top: 40px; }
+  .tag { display: inline-block; background: #f0f0eb; border-radius: 4px; padding: 3px 10px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #666; margin-left: 8px; }
+  .tag.pending { background: #fef3c7; color: #92400e; }
+  .green { color: #22a06b; }
+  .yellow { color: #d97706; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Ember SEO — Site Audit Report</div>
+  <h1>Peninsula Construction</h1>
+  <div class="subtitle">peninsula.construction</div>
+  <div class="date">July 19, 2026</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">PageSpeed Scores — After Optimization</div>
+    <div class="score-row">
+      <div class="score-block">
+        <h3>Desktop</h3>
+        <div class="metric-row"><span class="metric-name">Performance</span><span class="metric-score green">96</span></div>
+        <div class="metric-row"><span class="metric-name">Accessibility</span><span class="metric-score green">83</span></div>
+        <div class="metric-row"><span class="metric-name">Best Practices</span><span class="metric-score green">96</span></div>
+        <div class="metric-row"><span class="metric-name">SEO</span><span class="metric-score green">100</span></div>
+      </div>
+      <div class="score-block">
+        <h3>Mobile</h3>
+        <div class="metric-row"><span class="metric-name">Performance</span><span class="metric-score yellow">73</span></div>
+        <div class="metric-row"><span class="metric-name">Accessibility</span><span class="metric-score green">90</span></div>
+        <div class="metric-row"><span class="metric-name">Best Practices</span><span class="metric-score green">96</span></div>
+        <div class="metric-row"><span class="metric-name">SEO</span><span class="metric-score green">100</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Completed This Session</div>
+    <ul class="completed-list">
+      <li><span class="check">✓</span>Updated phone number sitewide to 831.566.3248 across all pages</li>
+      <li><span class="check">✓</span>Contact form wired to richrod@peninsula.construction via Formspree</li>
+      <li><span class="check">✓</span>Google Analytics 4 installed across all 48 pages — tracking live within 48 hours</li>
+      <li><span class="check">✓</span>Real client reviews added — Daniel Z. (ADU + Gazebo), Victor A. (Kitchen Remodel, Monterey), Mayra F. (Garage Conversion ADU, San Jose), Peggy C. (Kitchen + Roof, Watsonville)</li>
+      <li><span class="check">✓</span>Video testimonials embedded — Daniel's finished ADU and Mayra's garage conversion</li>
+      <li><span class="check">✓</span>Our Work page hero updated with real project photography</li>
+      <li><span class="check">✓</span>YouTube video embeds lazy loaded for mobile performance</li>
+      <li><span class="check">✓</span>External stock images replaced with local optimized webp files</li>
+      <li><span class="check">✓</span>ADU Cost Guide link fixed (was returning 404)</li>
+      <li><span class="check">✓</span>Footer link columns fixed across 6 pages</li>
+      <li><span class="check">✓</span>Why Choose Us cards — consistent styling across all 4 cards</li>
+      <li><span class="check">✓</span>Where We Work contact link fixed</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Action Items — Pending (Rich)</div>
+    <ul class="pending-list">
+      <li><span class="dot">→</span>Formspree confirmation — confirm email at formspree.io to activate contact form submissions <span class="tag pending">Pending</span></li>
+      <li><span class="dot">→</span>Google Business Profile — set up and verify peninsula.construction listing for local map pack SEO <span class="tag pending">Pending</span></li>
+      <li><span class="dot">→</span>Real project photography — replace remaining stock photos with actual Peninsula Construction project photos <span class="tag pending">Pending</span></li>
+      <li><span class="dot">→</span>YouTube channel — set up Peninsula Construction YouTube for project videos and local SEO <span class="tag pending">Pending</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="highlight-box">
+      <h3>SEO Score</h3>
+      <p>Peninsula Construction scores a <strong>perfect 100/100 SEO</strong> on both desktop and mobile. The site is fully optimized for local search across the South Bay, Santa Cruz County, and Monterey County markets. With Google Business Profile set up and regular content updates, this site is positioned to dominate local ADU and construction searches.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">
+  Prepared by Ember SEO &nbsp;|&nbsp; emberseo.ai &nbsp;|&nbsp; judd@emberseo.ai
+</div>
+
+</body>
+</html>
